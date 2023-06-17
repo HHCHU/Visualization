@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  /* background-color: white; */
+  background-color: #3e3f4a;
+}
+#mainContainer {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+.page {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  transition: opacity 0.5s;
+}
+.leftTap {
+  width: calc(15.3125vw - 20px);
+  height: calc(100vh - 30px);
+  padding: 15px 10px;
+  background-color: #202123;
+}
+
+.buttonHover {
+  transition: background-color 0.2s;
+}
+.buttonHover:hover {
+  background: #4cb4ff;
+}

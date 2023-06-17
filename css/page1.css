@@ -1,0 +1,128 @@
+#page1 {
+  display: flex;
+  flex-direction: row;
+  opacity: 1;
+}
+#newChatBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16px 0px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+/* #newChatBox:hover {
+  background: rgba(255, 255, 255, 0.1);
+} */
+#svgNewChatPlus {
+  margin: 0 14px;
+}
+#chatList {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+}
+.chatItem {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 8px;
+  padding: 13px 0px;
+}
+/* .chatItem:hover {
+  background: rgba(255, 255, 255, 0.1);
+} */
+.svgChatItem {
+  margin: 0px 13px;
+}
+
+#chatContent {
+  width: 84.6875vw;
+  height: 100vh;
+  position: relative;
+}
+#chatDialog {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow-y: scroll;
+}
+#chatDialogContainer {
+  width: 79.6vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#chatDialogTitle {
+  margin-top: 11.6vh;
+  text-align: center;
+  font-size: 45px;
+  margin-bottom: 3.33vh;
+}
+#chatDialogTitleFirstLine {
+  line-height: 40px;
+}
+#chatDialogTitleSecondLine {
+  letter-spacing: 2px;
+  margin-bottom: 2px;
+}
+#chatDialogSubTitle {
+  font-size: 35px;
+  font-weight: 100;
+  letter-spacing: 3px;
+}
+
+#chatDialogHowtoUse {
+  display: flex;
+  flex-direction: row;
+}
+.cd-htu-col {
+  width: 15.66vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0.76vw;
+}
+.cd-htu-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cd-htu-title-sym {
+  margin-bottom: 12px;
+}
+.cd-htu-title-text {
+  font-size: 24px;
+}
+
+#chatInterface {
+  width: 100%;
+  height: 28.24vh;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+#chatInterfaceWindow {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+#chatInterfaceShadow {
+  width: 100%;
+  height: 13.7vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(rgba(62, 63, 74, 0) 0%, #3e3f4a 50%);
+  opacity: 0;
+}
+#chatInterfaceInput {
+  width: 100%;
+  height: 21.11vh;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #3e3f4a;
+}
