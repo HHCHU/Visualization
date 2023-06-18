@@ -3,7 +3,7 @@
   flex-direction: row;
   opacity: 1;
 }
-#newChatBox {
+.newChatBox {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -15,10 +15,10 @@
 /* #newChatBox:hover {
   background: rgba(255, 255, 255, 0.1);
 } */
-#svgNewChatPlus {
+.svgNewChatPlus {
   margin: 0 14px;
 }
-#chatList {
+.chatList {
   display: flex;
   flex-direction: column;
   height: 100px;

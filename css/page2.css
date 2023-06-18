@@ -1,0 +1,5 @@
+#page2 {
+  display: none;
+  flex-direction: row;
+  opacity: 0;
+}

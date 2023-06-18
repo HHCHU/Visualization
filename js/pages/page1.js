@@ -13,7 +13,6 @@ let dialogScrollUpDetected = false;
 let dialogLastScrollPosition;
 
 // DOM
-const newChatBox = document.getElementById("newChatBox");
 const chatPromptPlaceholder = document.getElementById("chatPromptPlaceholder");
 const chatPromptTextBox = document.getElementById("chatPromptTextBox");
 const chatPromptBtn = document.getElementById("chatPromptBtn");
@@ -28,12 +27,8 @@ const chatDialogThread = document.getElementById("chatDialogThread");
 const chatInterfaceShadow = document.getElementById("chatInterfaceShadow");
 
 const openPage1 = () => {
-  if (currentPage != "page1") {
-    closeAllPages();
-    currentPage = "page1";
-    fadeDOMin(page1);
-    // page1.style.opacity = 1;
-  }
+  openPage(page1);
+  resetPage1();
 };
 
 const resetPage1 = () => {
@@ -193,7 +188,9 @@ const gptReply = (dom) => {
       gptReply(dom);
     }, 100);
   } else {
+    // Reply Complete
     dom.innerText = currentReply;
+    showDOM(nextPageBtn);
   }
   // console.log(dialogScrollUpDetected);
   if (!dialogScrollUpDetected) {
@@ -211,7 +208,7 @@ const dialogScrollDown = () => {
 };
 
 // addEventListener
-newChatBox.addEventListener("click", resetPage1);
+
 cpi_ld.addEventListener("click", promptInputClickedLD);
 cpi_tm.addEventListener("click", promptInputClickedTM);
 cpi_vd.addEventListener("click", promptInputClickedVD);
