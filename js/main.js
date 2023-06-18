@@ -1,6 +1,7 @@
 const page1 = document.getElementById("page1");
 const page2 = document.getElementById("page2");
-const pages = [page1, page2];
+const page3 = document.getElementById("page3");
+const pages = [page1, page2, page3];
 let currentPage = "page1";
 let currentTitle = "";
 const nextPageBtn = document.getElementById("nextPageBtn");
@@ -59,8 +60,12 @@ const onClickNextPageBtn = (e) => {
     // hideDOM(nextPageBtn);
   } else if (currentPage === "page2") {
     if (page2Status === PAGE2_STATUS_A_P_S_D) {
-      page2Status === PAGE2_STATUS_AP_SD;
+      page2Status = PAGE2_STATUS_AP_SD;
       change_Graph_A_P_S_D();
+    } else if ((page2Status = PAGE2_STATUS_AP_SD)) {
+      closeAllPages();
+      openPage(page3);
+      currentPage = "page3";
     }
   }
   console.log("To", currentPage);

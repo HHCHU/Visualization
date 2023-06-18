@@ -14,6 +14,7 @@ let cnt_passive;
 let cnt_subjective;
 let cnt_dependent;
 let cnts_A_P_S_D;
+let apsdCoordinate;
 
 // DOM
 const lyricLines = document.getElementById("lyricLines");
@@ -122,6 +123,7 @@ const addLgvCol4HTML = (colVals) => {
   //   return colHTML;
 };
 const addLgvCol2HTML = (colVals) => {
+  apsdCoordinate = [];
   let colClassNames = ["Active", "Passive", "Subjective", "Dependent"];
   let labels_AP_SD = ["능동-수동", "주체-종속"];
   let blockColHTMLs = [];
@@ -135,12 +137,6 @@ const addLgvCol2HTML = (colVals) => {
       );
     }
     blockColHTMLs.push(blockColHTML);
-    // colHTML += `<div class='lgvText'>${cnt}</div>`;
-    // let lgvCol = document.createElement("div");
-    // lgvCol.classList.add("lgvCol");
-    // lgvCol.classList.add("col4");
-    // lgvCol.innerHTML = colHTML;
-    // lgvCols.appendChild(lgvCol);
   });
   for (let i = 0; i < 2; i++) {
     let i1 = 2 * i;
@@ -153,6 +149,7 @@ const addLgvCol2HTML = (colVals) => {
     colHTML += blockColHTMLs[i1];
     colHTML += blockColHTMLs[i2];
     let ratio = (colVals[i1] / (colVals[i1] + colVals[i2])).toFixed(2);
+    apsdCoordinate.push(ratio);
     colHTML += `<div class='lgvText'>${ratio}</div>`;
     lgvCol.innerHTML = colHTML;
     lgvCols.appendChild(lgvCol);
@@ -174,40 +171,12 @@ const change_Graph_A_P_S_D = () => {
   );
   let visHeight = Math.floor(0.4713 * window.innerHeight);
   blockHeight = Math.floor((visHeight - (maxCnt_AP_SD - 1) * 4) / maxCnt_AP_SD);
-  //   console.log(visHeight, maxCnt_AP_SD, blockHeight);
+  console.log(blockHeight);
+  blockHeight = Math.max(blockHeight, 1);
+  console.log(blockHeight);
+
   addLgvCol2HTML(cnts_A_P_S_D);
 };
-// const getLgvColsHTML = (colVals) => {
-//   let colHTML = "";
-//   colVals.forEach((v) => {
-//     colHTML += `<div class="lgvCol">${v}</div>`;
-//   });
-//   return colHTML;
-// };
-// const getLgvBlockColsHTML = (colCnts) => {
-//   let colHTML = "";
-//   let colClassNames = ["Active", "Passive", "Subjective", "Dependent"];
-//   colCnts.forEach((cnt, i) => {
-//     console.log(cnt, i);
-//     let blockHTML = "";
-//     let colClassName = colClassNames[i];
-//     console.log(colClassName);
-//     for (let i = 0; i < cnt; i++) {
-//       blockHTML += `<div class="lgvBlock ${colClassName}" style="height: ${blockHeight}px;"></div>`;
-//     }
-//     colHTML += `<div class="lgvCol">${blockHTML}</div>`;
-//   });
-//   return colHTML;
-// };
-
-// const getLgvBlocksHTML = (blocks) => {
-//   console.log(blocks);
-//   let blockHTML = blocks.map((b) => {
-//     `<div class="lgvBlock ${b}"></div>`;
-//   });
-//   console.log(blockHTML);
-//   return blockHTML;
-// };
 
 const onClickChatItemLoveDive = () => {
   currentTitle = "LOVE DIVE";
