@@ -17,6 +17,7 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/page1.css" />
+    <link rel="stylesheet" href="css/page2.css" />
     <title>K-POP 사랑 노래 속 화자 페르소나 분석</title>
   </head>
   <body>
@@ -441,7 +442,7 @@
             New Chat
           </div>
           <div class="chatList">
-            <div class="chatItem">
+            <div id="chatItemLoveDive" class="chatItem buttonHover">
               <svg
                 class="svgChatItem"
                 width="19"
@@ -460,7 +461,7 @@
               </svg>
               <div>LOVE DIVE</div>
             </div>
-            <div class="chatItem">
+            <div id="chatItemTroubleMaker" class="chatItem buttonHover">
               <svg
                 class="svgChatItem"
                 width="19"
@@ -479,7 +480,7 @@
               </svg>
               <div>Trouble Maker</div>
             </div>
-            <div class="chatItem">
+            <div id="chatItemEmpty" class="chatItem buttonHover">
               <svg
                 class="svgChatItem"
                 width="19"
@@ -498,7 +499,7 @@
               </svg>
               <div>공허해</div>
             </div>
-            <div class="chatItem">
+            <div id="chatItemChainedUp" class="chatItem buttonHover">
               <svg
                 class="svgChatItem"
                 width="19"
@@ -518,6 +519,10 @@
               <div>사슬</div>
             </div>
           </div>
+        </div>
+        <div id="lyricLines"></div>
+        <div id="lyricVis">
+          <div id="lyricGraph"></div>
         </div>
       </div>
       <div id="nextPageBtn">Next</div>

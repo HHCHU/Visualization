@@ -1,5 +1,55 @@
 #page2 {
-  display: none;
+  display: flex;
   flex-direction: row;
   opacity: 0;
+}
+#lyricLines {
+  width: calc(33vw - 40px);
+  height: cacl(100vh - 80px);
+  padding: 40px 20px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+}
+.LyricLine {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 4px 10px;
+}
+.llLyric {
+  width: 14.7vw;
+}
+.llBadge {
+  width: 3.65vw;
+  height: 2.04vh;
+  margin-right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3e3f4a;
+  border-radius: 4px;
+}
+.llBadge.Active {
+  background-color: #34d1bf;
+}
+.llBadge.Passive {
+  background-color: #ffce4a;
+}
+.llBadge.Subjective {
+  background-color: #f17105;
+}
+.llBadge.Dependent {
+  background-color: #6665dd;
+}
+#lyricVis {
+  display: flex;
+  align-items: center;
+}
+#lyricGraph {
+  width: 44.27vw;
+  height: 91.85vh;
+  border-radius: 6px;
+  background-color: #40414e;
 }

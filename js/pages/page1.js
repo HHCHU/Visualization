@@ -3,11 +3,11 @@ const PAGE1_STATUS_CHAT = "PAGE1_STATUS_CHAT";
 
 let page1Status = PAGE1_STATUS_MAIN;
 let sendBtnActive = false;
-let currentTitle = "";
+
 let currentReply = "";
 // let crDOM;
 let crIdx = 0;
-let crSpeed = 20;
+let crSpeed = 100;
 let crSv = 3; // Current Reply Speed Variance
 let dialogScrollUpDetected = false;
 let dialogLastScrollPosition;
