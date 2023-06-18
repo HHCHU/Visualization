@@ -50,12 +50,18 @@ const clearDOMHTML = (dom) => {
 
 const onClickNextPageBtn = (e) => {
   console.log("From", currentPage);
-  closeAllPages();
+
   if (currentPage === "page1") {
+    closeAllPages();
     currentPage = "page2";
     openPage(page2);
     createPage2();
-    hideDOM(nextPageBtn);
+    // hideDOM(nextPageBtn);
+  } else if (currentPage === "page2") {
+    if (page2Status === PAGE2_STATUS_A_P_S_D) {
+      page2Status === PAGE2_STATUS_AP_SD;
+      change_Graph_A_P_S_D();
+    }
   }
   console.log("To", currentPage);
 };

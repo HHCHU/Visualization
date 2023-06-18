@@ -80,7 +80,7 @@
   flex-direction: row;
 }
 .lgvText {
-  width: 2.34375vw;
+  width: 4.6875vw;
   height: 5.56vh;
   display: flex;
   justify-content: center;
@@ -92,6 +92,12 @@
   display: flex;
   align-items: center;
   flex-direction: column-reverse;
+}
+.lgvCol.col4 {
+  margin: 0 3.125vw;
+}
+.lgvCol.col2 {
+  margin: 0 7.42vw;
 }
 .lgvBlock {
   width: 2.34375vw;
