@@ -49,8 +49,66 @@
   align-items: center;
 }
 #lyricGraph {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 44.27vw;
   height: 91.85vh;
   border-radius: 6px;
   background-color: #40414e;
+}
+#lgTitle {
+  font-size: 30px;
+  font-weight: 600;
+  margin: 7vh 0;
+}
+#lgCount {
+  display: flex;
+  flex-direction: row;
+}
+#lgVis {
+  display: flex;
+  flex-direction: row;
+  /* height: 47.13vh; */
+}
+#lgLabel {
+  display: flex;
+  flex-direction: row;
+}
+#lgvCols {
+  display: flex;
+  flex-direction: row;
+}
+.lgvText {
+  width: 2.34375vw;
+  height: 5.56vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lgvCol {
+  width: 2.34375vw;
+  margin: 0 3.125vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
+}
+.lgvBlock {
+  width: 2.34375vw;
+  height: 15px;
+  margin: 2px 0px;
+  border-radius: 4px;
+}
+
+.lgvBlock.Active {
+  background-color: #34d1bf;
+}
+.lgvBlock.Passive {
+  background-color: #f5ca5c;
+}
+.lgvBlock.Subjective {
+  background-color: #e2772f;
+}
+.lgvBlock.Dependent {
+  background-color: #6469d6;
 }
