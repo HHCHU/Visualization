@@ -41,7 +41,8 @@
   height: 100vh;
   position: relative;
 }
-#chatDialog {
+
+#chatDialogMain {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -181,6 +182,7 @@
   border-radius: 4px;
   transition: background-color 0.2s;
   /* background-color: #10a37f; */
+  cursor: default;
 }
 #promptSendBtnInactive {
 }

@@ -1,3 +1,8 @@
+const PAGE1_STATUS_MAIN = "PAGE1_STATUS_MAIN";
+const PAGE1_STATUS_CHAT = "PAGE1_STATUS_CHAT";
+
+let page1Status = PAGE1_STATUS_MAIN;
+
 const openPage1 = () => {
   if (currentPage != "page1") {
     closeAllPages();
@@ -10,6 +15,7 @@ const resetPage1 = () => {
   showChatPromptPlaceholder();
   hideChatPromptTextBox();
   promptBtnTurnOff();
+  page1Status = PAGE1_STATUS_MAIN;
 };
 
 const newChatBox = document.getElementById("newChatBox");
@@ -45,6 +51,7 @@ const promptBtnTurnOn = () => {
   promptSendBtnInactive.style.display = "none";
   promptSendBtnActive.style.display = "flex";
   chatPromptBtn.style.backgroundColor = "#10a37f";
+  chatPromptBtn.style.cursor = "pointer";
 };
 
 const promptBtnTurnOff = () => {
@@ -57,6 +64,7 @@ const promptBtnTurnOff = () => {
   promptSendBtnInactive.style.display = "flex";
   promptSendBtnActive.style.display = "none";
   chatPromptBtn.style.backgroundColor = "";
+  chatPromptBtn.style.cursor = "default";
 };
 
 const promptInputClicked = (title) => {
