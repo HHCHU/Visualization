@@ -27,6 +27,8 @@ const chatDialogThread = document.getElementById("chatDialogThread");
 const chatInterfaceShadow = document.getElementById("chatInterfaceShadow");
 
 const openPage1 = () => {
+  currentPage = "page1";
+  hideDOM(nextPageBtn);
   closeAllPages();
   openPage(page1);
   resetPage1();
