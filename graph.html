@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="css/interface.css" />
+    <link rel="stylesheet" href="css/graph.css" />
+    <title>K-POP 사랑 노래 속 화자 페르소나 분석</title>
+  </head>
+  <body>
+    <div id="container">
+      <div id="visualization">
+        <div id="d3graph"></div>
+      </div>
+      <div id="interface">
+        <div id="dataLegend">
+          <h3 class="legendTitle">남성/여성 아이돌</h3>
+          <div class="legendOptions">
+            <div id="legend_fm_m" class="legendOption">
+              <div class="legendColor lg-fm-m"></div>
+              <div class="txt-fm-m">남성</div>
+            </div>
+            <div id="legend_fm_f" class="legendOption">
+              <div class="legendColor lg-fm-f"></div>
+              <div class="txt-fm-f">여성</div>
+            </div>
+            <div id="legend_fm_fm" class="legendOption">
+              <div class="legendColor lg-fm-fm"></div>
+              <div class="txt-fm-fm">혼성</div>
+            </div>
+          </div>
+          <h3 class="legendTitle">페르소나</h3>
+          <div class="legendOptions">
+            <div id="legend_ps_1" class="legendOption">
+              <div class="legendColor lg-ps-1"></div>
+              <div class="txt-ps-1">순종자</div>
+            </div>
+            <div id="legend_ps_2" class="legendOption">
+              <div class="legendColor lg-ps-2"></div>
+              <div class="txt-ps-2">순수파</div>
+            </div>
+            <div id="legend_ps_3" class="legendOption">
+              <div class="legendColor lg-ps-3"></div>
+              <div class="txt-ps-3">유혹자</div>
+            </div>
+            <div id="legend_ps_4" class="legendOption">
+              <div class="legendColor lg-ps-4"></div>
+              <div class="txt-ps-4">숭배자</div>
+            </div>
+            <div id="legend_ps_5" class="legendOption">
+              <div class="legendColor lg-ps-5"></div>
+              <div class="txt-ps-5">순정파</div>
+            </div>
+            <div id="legend_ps_6" class="legendOption">
+              <div class="legendColor lg-ps-6"></div>
+              <div class="txt-ps-6">약한 자아</div>
+            </div>
+            <div id="legend_ps_7" class="legendOption">
+              <div class="legendColor lg-ps-7"></div>
+              <div class="txt-ps-7">강한 자아</div>
+            </div>
+            <div id="legend_ps_8" class="legendOption">
+              <div class="legendColor lg-ps-8"></div>
+              <div class="txt-ps-8">불도저</div>
+            </div>
+            <div id="legend_ps_9" class="legendOption">
+              <div class="legendColor lg-ps-9"></div>
+              <div class="txt-ps-9">수호자</div>
+            </div>
+            <div id="legend_ps_10" class="legendOption">
+              <div class="legendColor lg-ps-10"></div>
+              <div class="txt-ps-10">지배자</div>
+            </div>
+          </div>
+        </div>
+        <div class="interfaceOption">
+          <h3 class="interfaceOptionTitle">색상 코딩</h3>
+          <div class="radioOptions">
+            <div>
+              <input
+                type="radio"
+                id="ccFM"
+                name="colorCategory"
+                value="FM"
+                checked
+              />
+              <label for="ccFM">남성/여성 아이돌</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                id="ccPS"
+                name="colorCategory"
+                value="Persona"
+              />
+              <label for="ccPS">페르소나</label>
+            </div>
+          </div>
+        </div>
+        <div class="interfaceOption">
+          <h3 class="interfaceOptionTitle">년도 별 보기</h3>
+          <div class="checkboxes">
+            <div>
+              <input type="checkbox" id="cb_years" name="cb_years" />
+              <label for="cb_years">년도 별 보기</label>
+            </div>
+          </div>
+          <div class="inputRangeli">
+            <label id="inputRangeYearLabel" for="rangeYear">년도: 2022</label>
+            <input
+              type="range"
+              id="rangeYear"
+              name="rangeYear"
+              min="2004"
+              max="2022"
+              value="2022"
+              disabled
+            />
+          </div>
+        </div>
+      </div>
+      <div id="information">
+        <div id="song_info">
+          <p>데이터를 선택하세요.</p>
+          <br />
+          <p>(그래프에서 마우스오버하세요.)</p>
+          <!-- <p><b>제목</b>: 불타오르네 (FIRE)</p>
+          <br />
+          <p><b>가수</b>: 방탄소년단</p>
+          <br />
+          <p><b>남/여</b>: 남성</p>
+          <br />
+          <p><b>애플 뮤직 연도</b>: 2016</p>
+          <br />
+          <p><b>능동</b>: 0.8983050847</p>
+          <br />
+          <p><b>주체</b>: 0.8333333333</p> -->
+        </div>
+      </div>
+    </div>
+    <script src="js/visualization.js"></script>
+    <script src="js/interface.js"></script>
+  </body>
+</html>
