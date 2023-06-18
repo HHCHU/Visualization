@@ -4,7 +4,7 @@
 }
 body {
   /* background-color: white; */
-  background-color: #3e3f4a;
+  background-color: #343540;
 }
 #mainContainer {
   width: 100vw;
@@ -29,7 +29,8 @@ body {
 
 .buttonHover {
   transition: background-color 0.2s;
+  cursor: pointer;
 }
 .buttonHover:hover {
-  background: #4cb4ff;
+  background: #10a37f;
 }

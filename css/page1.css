@@ -89,6 +89,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 1.39vh;
 }
 .cd-htu-title-sym {
   margin-bottom: 12px;
@@ -96,9 +97,30 @@
 .cd-htu-title-text {
   font-size: 24px;
 }
+.cd-hts-msgs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.cd-hts-msg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 8.33vh;
+  margin-bottom: 1.39vh;
+  background: #3e3f4a;
+  /* padding: 25px 0px; */
+  border-radius: 6px;
+}
+.cd-hts-msg.lg {
+  height: 10.19vh;
+}
 
 #chatInterface {
-  width: 100%;
+  width: 79.6vw;
   height: 28.24vh;
   position: absolute;
   bottom: 0;
@@ -115,14 +137,57 @@
   position: absolute;
   top: 0;
   left: 0;
-  background: linear-gradient(rgba(62, 63, 74, 0) 0%, #3e3f4a 50%);
+  background: linear-gradient(rgba(62, 63, 74, 0) 0%, #343540 50%);
   opacity: 0;
 }
 #chatInterfaceInput {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   height: 21.11vh;
   position: absolute;
   bottom: 0;
   left: 0;
-  background-color: #3e3f4a;
+  background-color: #343540;
+}
+#chatPrompt {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(50vw - 32px);
+  min-height: 5.18vh;
+  margin-top: 3.33vh;
+  margin-bottom: 12px;
+  padding: 0px 16px;
+  background: #3e3f4a;
+  border-radius: 6px;
+}
+#chatPromptTextBox {
+}
+#chatPromptBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 29px;
+  height: 29px;
+  border-radius: 4px;
+  background-color: #10a37f;
+}
+
+#chatPInputItems {
+  width: 50vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 5.09vh;
+}
+.chatPInputItem {
+  width: 12vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #3e3f4a;
+  border-radius: 6px;
 }
