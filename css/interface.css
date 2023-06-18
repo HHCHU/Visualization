@@ -1,0 +1,153 @@
+#interface {
+  background-color: #40414e;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  padding-left: 20px;
+  padding-right: 20px;
+}
+#dataLegend {
+  width: calc(100% -40px);
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.legendTitle {
+  margin-bottom: 8px;
+}
+.legendOptions {
+  margin-bottom: 8px;
+}
+
+.legendOption {
+  display: flex;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  align-items: center;
+}
+.legendColor {
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+}
+.lg-fm-m {
+  background-color: #7cb8ff;
+  border-radius: 100%;
+}
+
+.lg-fm-f {
+  background-color: #ffa7a7;
+  border-radius: 100%;
+}
+.lg-fm-fm {
+  background-color: white;
+  border-radius: 100%;
+}
+.lg-ps-1 {
+  background-color: #00a980;
+  border-radius: 100%;
+}
+.lg-ps-2 {
+  background-color: #ffd800;
+  border-radius: 100%;
+}
+.lg-ps-3 {
+  background-color: #ff71a3;
+  border-radius: 100%;
+}
+.lg-ps-4 {
+  background-color: #7978f1;
+  border-radius: 100%;
+}
+.lg-ps-5 {
+  background-color: #ff9337;
+  border-radius: 100%;
+}
+.lg-ps-6 {
+  background-color: #7ed321;
+  border-radius: 100%;
+}
+.lg-ps-7 {
+  background-color: #0057ff;
+  border-radius: 100%;
+}
+.lg-ps-8 {
+  background-color: #ff006b;
+  border-radius: 100%;
+}
+.lg-ps-9 {
+  background-color: #ffffff;
+  border-radius: 100%;
+}
+.lg-ps-10 {
+  background-color: #21f2ff;
+  border-radius: 100%;
+}
+
+.txt-fm-m {
+  color: #7cb8ff;
+}
+
+.txt-fm-f {
+  color: #ffa7a7;
+}
+.txt-fm-fm {
+  color: white;
+}
+
+.txt-ps-1 {
+  color: #00a980;
+}
+.txt-ps-2 {
+  color: #ffd800;
+}
+.txt-ps-3 {
+  color: #ff71a3;
+}
+.txt-ps-4 {
+  color: #7978f1;
+}
+.txt-ps-5 {
+  color: #ff9337;
+}
+.txt-ps-6 {
+  color: #7ed321;
+}
+.txt-ps-7 {
+  color: #0057ff;
+}
+.txt-ps-8 {
+  color: #ff006b;
+}
+.txt-ps-9 {
+  color: #ffffff;
+}
+.txt-ps-10 {
+  color: #21f2ff;
+}
+
+.interfaceOption {
+  margin-bottom: 16px;
+}
+.interfaceOptionTitle {
+  margin-bottom: 8px;
+}
+
+.checkboxes {
+  margin-bottom: 8px;
+}
+.inputRangeli {
+  display: flex;
+  flex-direction: column;
+}
+#lyricBox {
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 20px;
+}
+.songDesc {
+  margin-bottom: 8px;
+}
