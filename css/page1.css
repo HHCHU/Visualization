@@ -142,7 +142,7 @@
 }
 #chatInterfaceInput {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
   width: 100%;
   height: 21.11vh;
@@ -158,13 +158,19 @@
   align-items: center;
   width: calc(50vw - 32px);
   min-height: 5.18vh;
-  margin-top: 3.33vh;
+  /* margin-top: 3.33vh; */
   margin-bottom: 12px;
   padding: 0px 16px;
   background: #3e3f4a;
   border-radius: 6px;
 }
+#chatPromptPlaceholder {
+  color: #8e8ea0;
+}
 #chatPromptTextBox {
+  width: calc(50vw - 32px - 29px - 16px);
+  display: none;
+  margin: 10px;
 }
 #chatPromptBtn {
   display: flex;
@@ -173,7 +179,13 @@
   width: 29px;
   height: 29px;
   border-radius: 4px;
-  background-color: #10a37f;
+  transition: background-color 0.2s;
+  /* background-color: #10a37f; */
+}
+#promptSendBtnInactive {
+}
+#promptSendBtnActive {
+  display: none;
 }
 
 #chatPInputItems {
@@ -182,6 +194,7 @@
   flex-direction: row;
   justify-content: space-between;
   height: 5.09vh;
+  margin-bottom: 6.48vh;
 }
 .chatPInputItem {
   width: 12vw;
