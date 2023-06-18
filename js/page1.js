@@ -2,76 +2,72 @@ const PAGE1_STATUS_MAIN = "PAGE1_STATUS_MAIN";
 const PAGE1_STATUS_CHAT = "PAGE1_STATUS_CHAT";
 
 let page1Status = PAGE1_STATUS_MAIN;
+let sendBtnActive = false;
+let currentTitle = "";
+let currentReply = "";
+// let crDOM;
+let crIdx = 0;
+let crSpeed = 20;
+let crSv = 3; // Current Reply Speed Variance
+let dialogScrollUpDetected = false;
+let dialogLastScrollPosition;
+
+// DOM
+const newChatBox = document.getElementById("newChatBox");
+const chatPromptPlaceholder = document.getElementById("chatPromptPlaceholder");
+const chatPromptTextBox = document.getElementById("chatPromptTextBox");
+const chatPromptBtn = document.getElementById("chatPromptBtn");
+const promptSendBtnInactive = document.getElementById("promptSendBtnInactive");
+const promptSendBtnActive = document.getElementById("promptSendBtnActive");
+const cpi_ld = document.getElementById("cpi-ld"); // ChatInputItem
+const cpi_tm = document.getElementById("cpi-tm");
+const cpi_vd = document.getElementById("cpi-vd");
+const cpi_ch = document.getElementById("cpi-ch");
+const chatDialogMain = document.getElementById("chatDialogMain");
+const chatDialogThread = document.getElementById("chatDialogThread");
+const chatInterfaceShadow = document.getElementById("chatInterfaceShadow");
 
 const openPage1 = () => {
   if (currentPage != "page1") {
     closeAllPages();
     currentPage = "page1";
-    page1.style.opacity = 1;
+    fadeDOMin(page1);
+    // page1.style.opacity = 1;
   }
 };
 
 const resetPage1 = () => {
-  showChatPromptPlaceholder();
-  hideChatPromptTextBox();
+  showDOM(chatDialogMain);
+  hideDOM(chatDialogThread);
+  showDOM(chatPromptPlaceholder);
+  hideDOM(chatPromptTextBox);
   promptBtnTurnOff();
+  fadeDOMin(chatInterfaceShadow);
+  clearDOMHTML(chatDialogThread);
   page1Status = PAGE1_STATUS_MAIN;
 };
 
-const newChatBox = document.getElementById("newChatBox");
-newChatBox.addEventListener("click", resetPage1);
-
-const hideChatPromptPlaceholder = () => {
-  const chatPromptPlaceholder = document.getElementById(
-    "chatPromptPlaceholder"
-  );
-  chatPromptPlaceholder.style.display = "none";
-};
-const showChatPromptPlaceholder = () => {
-  const chatPromptPlaceholder = document.getElementById(
-    "chatPromptPlaceholder"
-  );
-  chatPromptPlaceholder.style.display = "flex";
-};
-const hideChatPromptTextBox = () => {
-  const chatPromptTextBox = document.getElementById("chatPromptTextBox");
-  chatPromptTextBox.style.display = "none";
-};
-const showChatPromptTextBox = () => {
-  const chatPromptTextBox = document.getElementById("chatPromptTextBox");
-  chatPromptTextBox.style.display = "flex";
-};
 const promptBtnTurnOn = () => {
-  const chatPromptBtn = document.getElementById("chatPromptBtn");
-  const promptSendBtnInactive = document.getElementById(
-    "promptSendBtnInactive"
-  );
-  const promptSendBtnActive = document.getElementById("promptSendBtnActive");
-
-  promptSendBtnInactive.style.display = "none";
-  promptSendBtnActive.style.display = "flex";
+  sendBtnActive = true;
+  hideDOM(promptSendBtnInactive);
+  showDOM(promptSendBtnActive);
   chatPromptBtn.style.backgroundColor = "#10a37f";
   chatPromptBtn.style.cursor = "pointer";
 };
 
 const promptBtnTurnOff = () => {
-  const chatPromptBtn = document.getElementById("chatPromptBtn");
-  const promptSendBtnInactive = document.getElementById(
-    "promptSendBtnInactive"
-  );
-  const promptSendBtnActive = document.getElementById("promptSendBtnActive");
-
-  promptSendBtnInactive.style.display = "flex";
-  promptSendBtnActive.style.display = "none";
+  sendBtnActive = false;
+  showDOM(promptSendBtnInactive);
+  hideDOM(promptSendBtnActive);
   chatPromptBtn.style.backgroundColor = "";
   chatPromptBtn.style.cursor = "default";
 };
 
 const promptInputClicked = (title) => {
+  currentTitle = title;
   console.log(title);
-  hideChatPromptPlaceholder();
-  showChatPromptTextBox();
-  const chatPromptTextBox = document.getElementById("chatPromptTextBox");
+  hideDOM(chatPromptPlaceholder);
+  showDOM(chatPromptTextBox);
   let prompt = `내가 제시한 ‘능동', ‘수동', ‘주체', ‘종속'의 정의를 바탕으로 ‘능동-수동', '주체-종속'의 축 안에서 <${title}> 속 화자의 태도가 어떠한지 분석해줘.`;
   chatPromptTextBox.innerText = prompt;
   promptBtnTurnOn();
@@ -90,12 +86,145 @@ const promptInputClickedCH = () => {
   promptInputClicked("사슬");
 };
 
-const cpi_ld = document.getElementById("cpi-ld");
-const cpi_tm = document.getElementById("cpi-tm");
-const cpi_vd = document.getElementById("cpi-vd");
-const cpi_ch = document.getElementById("cpi-ch");
+const onClickchatPromptBtn = () => {
+  if (sendBtnActive) {
+    if (page1Status === PAGE1_STATUS_MAIN) {
+      page1Status = PAGE1_STATUS_CHAT;
+      hideDOM(chatDialogMain);
+      showDOM(chatDialogThread);
+      fadeDOMin(chatInterfaceShadow);
+    } else if (page1Status === PAGE1_STATUS_CHAT) {
+    }
+    showDOM(chatPromptPlaceholder);
+    hideDOM(chatPromptTextBox);
+    promptBtnTurnOff();
+    generateChatThread("me");
+    generateChatThread("gpt");
+  }
+};
 
+const getLyricWithLineNo = () => {
+  let lData = lyricData[currentTitle];
+  // console.log(lData);
+  let lineNums = lData["lineNo"];
+  // console.log(lineNums);
+  let lyrics = lData["lyric"];
+  let lines = [];
+  for (let i = 0; i < Object.keys(lineNums).length; i++) {
+    let line = `${lineNums[i]}. ${lyrics[i]}`;
+    lines.push(line);
+  }
+  // console.log(lines);
+
+  return lines.join("\n");
+};
+const dActiveName = (dActive) => {
+  if (dActive === "Active") {
+    return "능동";
+  }
+  if (dActive === "Passive") {
+    return "수동";
+  }
+  return `XX${dActive}XX`;
+};
+const dSubjectName = (dSubject) => {
+  if (dSubject === "Subjective") {
+    return "주체";
+  }
+  if (dSubject === "Dependent") {
+    return "종속";
+  }
+  if (dSubject === "Neutral") {
+    return "중립";
+  }
+  return `XX${dSubject}XX`;
+};
+const getLyricWithLineAnalysis = () => {
+  let lData = lyricData[currentTitle];
+  let lineNums = lData["lineNo"];
+  let lyrics = lData["lyric"];
+  let actives = lData["active"];
+  let subjects = lData["subject"];
+  let lines = [];
+  // console.log(lData);
+  for (let i = 0; i < Object.keys(lineNums).length; i++) {
+    let dan = dActiveName(actives[i]);
+    let dsn = dSubjectName(subjects[i]);
+    let line = `${lineNums[i]}. ${lyrics[i]}: ${dan} / ${dsn}`;
+    lines.push(line);
+  }
+
+  return lines.join("\n");
+};
+
+const generateChatThread = (speaker) => {
+  let qBox = document.createElement("div");
+  let qIcon = document.createElement("div");
+  let qText = document.createElement("div");
+  qBox.classList.add("ThreadBox");
+  qBox.classList.add(speaker);
+  qIcon.classList.add("ThreadIcon");
+  qIcon.classList.add(speaker);
+  qText.classList.add("ThreadText");
+  if (speaker === "me") {
+    qText.innerText = chatQuestion + getLyricWithLineNo();
+    // qText.innerText = chatQuestion + lyricWithLineNo[currentTitle];
+  }
+  if (speaker === "gpt") {
+    currentReply = getLyricWithLineAnalysis();
+    crIdx = 0;
+    setTimeout(() => {
+      gptReply(qText);
+    }, 100);
+  }
+  qBox.appendChild(qIcon);
+  qBox.appendChild(qText);
+  chatDialogThread.appendChild(qBox);
+  dialogScrollDown();
+};
+
+const gptReply = (dom) => {
+  let sVar = Math.random() * (crSv * 2 - 1) - crSv;
+  let speed = crSpeed + sVar;
+  crIdx += speed;
+  if (crIdx < currentReply.length) {
+    dom.innerText = currentReply.substring(0, crIdx);
+    setTimeout(() => {
+      gptReply(dom);
+    }, 100);
+  } else {
+    dom.innerText = currentReply;
+  }
+  // console.log(dialogScrollUpDetected);
+  if (!dialogScrollUpDetected) {
+    dialogScrollDown();
+  }
+};
+
+const dialogScrollUpDetectStart = () => {
+  dialogLastScrollPosition = chatDialogThread.scrollTop;
+  dialogScrollUpDetected = false;
+};
+const dialogScrollDown = () => {
+  dialogScrollUpDetectStart();
+  chatDialogThread.scrollTop = chatDialogThread.scrollHeight;
+};
+
+// addEventListener
+newChatBox.addEventListener("click", resetPage1);
 cpi_ld.addEventListener("click", promptInputClickedLD);
 cpi_tm.addEventListener("click", promptInputClickedTM);
 cpi_vd.addEventListener("click", promptInputClickedVD);
 cpi_ch.addEventListener("click", promptInputClickedCH);
+chatPromptBtn.addEventListener("click", onClickchatPromptBtn);
+
+chatDialogThread.addEventListener("scroll", function () {
+  // console.log(chatDialogThread.scrollTop);
+  if (!dialogScrollUpDetected) {
+    let currentScrollPosition = chatDialogThread.scrollTop;
+    if (currentScrollPosition < dialogLastScrollPosition) {
+      dialogScrollUpDetected = true;
+      // console.log("scrollup");
+    }
+  }
+});

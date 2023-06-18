@@ -42,20 +42,62 @@
   position: relative;
 }
 
-#chatDialogMain {
-  width: 100%;
+#chatDialog {
+  /* width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
-  left: 0;
-  overflow-y: scroll;
+  left: 0; */
 }
-#chatDialogContainer {
-  width: 79.6vw;
+
+.cdContainer {
+  /* width: 79.6vw; */
+  padding-right: 5.0875vw;
+  padding-bottom: 28.24vh;
+  height: 71.76vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-y: scroll;
 }
+#chatDialogMain {
+}
+#chatDialogThread {
+  padding-right: 0;
+  display: none;
+}
+.ThreadBox {
+  width: calc(100% - 5.0875vw);
+  padding-right: 5.0875vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.ThreadBox.gpt {
+  background-color: #444654;
+}
+.ThreadIcon {
+  width: 30px;
+  height: 30px;
+  margin-top: 25px;
+  margin-right: calc(5vw - 30px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+}
+.ThreadIcon.me {
+  background-color: #9547d2;
+}
+.ThreadIcon.gpt {
+  background-color: #10a37f;
+}
+.ThreadText {
+  width: 45vw;
+  padding: 25px 0px;
+  line-height: 32px;
+}
+
 #chatDialogTitle {
   margin-top: 11.6vh;
   text-align: center;
@@ -121,7 +163,8 @@
 }
 
 #chatInterface {
-  width: 79.6vw;
+  /* width: 79.6vw; */
+  width: 84.6875vw;
   height: 28.24vh;
   position: absolute;
   bottom: 0;
@@ -140,12 +183,15 @@
   left: 0;
   background: linear-gradient(rgba(62, 63, 74, 0) 0%, #343540 50%);
   opacity: 0;
+  transition: opacity 0.5s;
 }
 #chatInterfaceInput {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  width: 100%;
+  /* width: 84.6875vw; */
+  width: 79.6vw;
+  padding-right: 5.0875vw;
   height: 21.11vh;
   position: absolute;
   bottom: 0;

@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="js/lyrics/LoveDive.js"></script>
+    <script src="js/lyrics/TroubleMaker.js"></script>
+    <script src="js/lyrics/Empty.js"></script>
+    <script src="js/lyrics/ChainedUp.js"></script>
+    <script src="js/prompt.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -155,8 +160,8 @@
           </div>
         </div>
         <div id="chatContent">
-          <div id="chatDialogMain">
-            <div id="chatDialogContainer">
+          <div id="chatDialogMain" class="cdContainer">
+            <div id="chatDialogMainContainer">
               <div id="chatDialogTitle">
                 <div id="chatDialogTitleFirstLine">K-POP 사랑 노래 속</div>
                 <div id="chatDialogTitleSecondLine">화자 페르소나 분석</div>
@@ -391,6 +396,7 @@
               </div>
             </div>
           </div>
+          <div id="chatDialogThread" class="cdContainer"></div>
           <div id="chatInterface">
             <div id="chatInterfaceWindow">
               <div id="chatInterfaceShadow"></div>
