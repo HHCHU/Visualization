@@ -4,13 +4,14 @@
   opacity: 0;
 }
 #lyricLines {
-  width: calc(33vw - 40px);
+  width: calc(29vw - 40px);
   height: cacl(100vh - 80px);
   padding: 40px 20px;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
   font-size: 13px;
+  margin-right: 4vw;
 }
 .LyricLine {
   display: flex;
