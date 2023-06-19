@@ -61,6 +61,19 @@ body {
   background: #4cb4ff;
 }
 
+#homeBtn {
+  position: fixed;
+  left: 3.22vw;
+  top: 4.44vh;
+  width: 2.92vw;
+  z-index: 10;
+  display: none;
+  cursor: pointer;
+}
+#homeBtn img {
+  width: 100%;
+}
+
 .txt-ps-1 {
   color: #00a980;
 }

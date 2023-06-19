@@ -30,6 +30,7 @@ const openPage1 = () => {
   currentPage = "page1";
   hideDOM(nextPageBtn);
   closeAllPages();
+  hideDOM(homeBtn);
   openPage(page1);
   resetPage1();
   nextPageBtn.innerText = "Next";

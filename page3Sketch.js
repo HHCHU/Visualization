@@ -20,7 +20,7 @@ let aDr = 1;
 let aDx = 0;
 let aDy = 0;
 
-// let areas_ps;
+let areas_ps;
 // let area_ps1;
 // let area_ps2;
 // let area_ps3;

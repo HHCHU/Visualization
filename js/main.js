@@ -17,6 +17,7 @@ let currentPage = "page1";
 let currentTitle = "";
 const nextPageBtn = document.getElementById("nextPageBtn");
 const newChatBoxes = document.getElementsByClassName("newChatBox");
+const homeBtn = document.getElementById("homeBtn");
 
 const closeAllPages = () => {
   for (let page of pages) {
@@ -79,6 +80,8 @@ const onClickNextPageBtn = (e) => {
       page2Status = PAGE2_STATUS_A_P_S_D;
       currentPage = "page3";
       page3Status = PAGE3_STATUS_COORDINATE;
+      showDOM(homeBtn);
+      resetPage3();
     }
   } else if (currentPage === "page3") {
     console.log("From", page3Status);
@@ -95,6 +98,7 @@ const onClickNextPageBtn = (e) => {
       closeAllPages();
       openPage(pageEnd);
       nextPageBtn.innerText = "To Start";
+      hideDOM(homeBtn);
     }
     console.log("To", page3Status);
     // <<<<<<< Updated upstream
@@ -130,6 +134,7 @@ const onClickNextPageBtn = (e) => {
   else if (currentPage === "pageEnd") {
     closeAllPages();
     openPage1();
+
     // onClick = location.reload(true);
   }
   console.log("To", currentPage);
@@ -146,6 +151,8 @@ nextPageBtn.addEventListener("click", onClickNextPageBtn);
 for (let newChatBox of newChatBoxes) {
   newChatBox.addEventListener("click", openPage1);
 }
+
+homeBtn.addEventListener("click", openPage1);
 
 //Initialize
 openPage1();

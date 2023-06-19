@@ -20,6 +20,17 @@ const personaImg = document.getElementById("personaImg");
 const personaHashtag = document.getElementById("personaHashtag");
 const personaDesc = document.getElementById("personaDesc");
 
+const resetPage3 = () => {
+  //reset DOM
+  clearDOMHTML(mainSongs);
+  clearDOMHTML(personaImg);
+  clearDOMHTML(personaHashtag);
+  clearDOMHTML(personaDesc);
+  //reset Sketch
+  currentPS = "";
+  overallShow = false;
+};
+
 const showOverall = (ps) => {
   //LEFT
   clearDOMHTML(mainSongs);
