@@ -32,6 +32,40 @@
 #p3LeftOverall {
   display: none;
 }
+#p3LeftSubject {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+.personaCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pcHeader {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.pcImg {
+  width: 13vw;
+  margin-bottom: 16px;
+}
+.pcImg img {
+  width: 100%;
+}
+.pcName {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.pcHashTag {
+  font-size: 17px;
+  font-weight: 100;
+}
+.pcBlank {
+  height: 7.87vh;
+}
 #mainSongs {
   display: flex;
   flex-direction: row;

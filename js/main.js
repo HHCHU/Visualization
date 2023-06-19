@@ -91,6 +91,7 @@ const onClickNextPageBtn = (e) => {
       hideDOM(p3LeftOverall);
       hideDOM(p3RightOverall);
       showDOM(rangeSubjectVertical);
+      showDOM(p3LeftSubject);
       page3Status = PAGE3_STATUS_IMP_SUBJECT;
     } else if (page3Status === PAGE3_STATUS_IMP_SUBJECT) {
       hideDOM(rangeSubjectVertical);
