@@ -124,7 +124,7 @@ const onClickNextPageBtn = (e) => {
     closeAllPages();
     openPage(pageEnd);
     nextPageBtn.innerText = "To Start";
-    // hideDOM(homeBtn);
+    hideDOM(homeBtn);
   } else if (currentPage === "pageEnd") {
     closeAllPages();
     openPage1();

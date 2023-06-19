@@ -1,4 +1,11 @@
 const visualization = document.getElementById("visualization");
+const sdTitle = document.getElementById("sdTitle");
+const sdSinger = document.getElementById("sdSinger");
+const sdFM = document.getElementById("sdFM");
+const sdAppleMusicYear = document.getElementById("sdAppleMusicYear");
+const sdActiveSubject = document.getElementById("sdActiveSubject");
+const sdPersona = document.getElementById("sdPersona");
+const lyricBox = document.getElementById("lyricBox");
 
 const graphFunctions = {};
 
@@ -187,27 +194,32 @@ d3.csv("data/data_analysis.csv").then((data) => {
   let mouseover = function (event, d) {
     // console.log(d);
     // console.log(d.title);
-    let songInfo = document.getElementById("song_info");
-    function createInfoLine(k, v, pc = "") {
-      return `<p class="songDesc"><b>${k}</b>: <span style="color: ${pc}">${v}</span></p>`;
+    // let songInfo = document.getElementById("song_info");
+    function getInfoLineHTML(k, v, pc = "") {
+      return `<b>${k}</b>: <span style="color: ${pc}">${v}</span>`;
     }
-    function createAlbumImg(imageURL) {
-      return `<div style="width:200px; height: 200px; background-color: #40414e;"><img src="${imageURL}" style="width: 100%"/></div><br /><br /><br />`;
-    }
+    // function createAlbumImg(imageURL) {
+    //   return `<div id="albumCover"><img src="${imageURL}" style="width: 100%"/></div><br /><br /><br />`;
+    // }
     function createLyricBox(lyric) {
-      return `<div id='lyricBox'style="width:200px; height: 300px; overflow:scroll">${lyric}</div>`;
+      return `<div id='lyricBox'>${lyric}</div>`;
     }
-    let songInfoHTML = "";
+    // let songInfoHTML = "";
     // console.log(d.imageURL);
-    songInfoHTML += createAlbumImg(d.imageURL);
-    songInfoHTML += createInfoLine("제목", d.Title);
-    songInfoHTML += createInfoLine("가수", d.Singer);
-    songInfoHTML += createInfoLine("남/여", d.FM);
-    songInfoHTML += createInfoLine("애플 뮤직 연도", d.AppleMusicYear);
+    const albumCover = document.getElementById("albumCover");
+    albumCover.innerHTML = `<img src="${d.imageURL}" style="width: 100%"/>`;
+
+    sdTitle.innerHTML = getInfoLineHTML("제목", d.Title);
+    sdSinger.innerHTML = getInfoLineHTML("가수", d.Singer);
+    sdFM.innerHTML = getInfoLineHTML("남/여", d.FM);
+    sdAppleMusicYear.innerHTML = getInfoLineHTML(
+      "애플 뮤직 연도",
+      d.AppleMusicYear
+    );
     let floatActive = parseFloat(d.Active);
     let floatSubject = parseFloat(d.Subject);
     let activeSubject = `${floatActive.toFixed(2)}, ${floatSubject.toFixed(2)}`;
-    songInfoHTML += createInfoLine("능동, 주체", activeSubject);
+    sdActiveSubject.innerHTML = getInfoLineHTML("능동, 주체", activeSubject);
     let pc = "";
     let personaStr = d.Persona;
     if (d.Persona !== "") {
@@ -215,12 +227,28 @@ d3.csv("data/data_analysis.csv").then((data) => {
     } else {
       personaStr = "-";
     }
-    songInfoHTML += createInfoLine("페르소나", personaStr, pc);
-    songInfoHTML += createInfoLine("가사", "");
-    let replacedLyrics = d.Lyrics.replace(/\n/g, "<br />");
-    songInfoHTML += createLyricBox(replacedLyrics);
+    sdPersona.innerHTML = getInfoLineHTML("페르소나", personaStr, pc);
+
+    lyricBox.innerHTML = d.Lyrics.replace(/\n/g, "<br />");
+    // songInfoHTML += createAlbumImg(d.imageURL);
+    // songInfoHTML += createInfoLine("제목", d.Title);
+    // songInfoHTML += createInfoLine("가수", d.Singer);
+    // songInfoHTML += createInfoLine("남/여", d.FM);
+    // songInfoHTML += createInfoLine("애플 뮤직 연도", d.AppleMusicYear);
+    // songInfoHTML += createInfoLine("능동, 주체", activeSubject);
+    // let pc = "";
+    // let personaStr = d.Persona;
+    // if (d.Persona !== "") {
+    //   pc = personaColor[d.Persona];
+    // } else {
+    //   personaStr = "-";
+    // }
+    // songInfoHTML += createInfoLine("페르소나", personaStr, pc);
+    // songInfoHTML += createInfoLine("가사", "");
+    // let replacedLyrics = d.Lyrics.replace(/\n/g, "<br />");
+    // songInfoHTML += createLyricBox(replacedLyrics);
     // console.log(songInfoHTML);
-    songInfo.innerHTML = songInfoHTML;
+    // songInfo.innerHTML = songInfoHTML;
     event.target.setAttribute("r", 7.5);
   };
   let mouseleave = function (event, d) {

@@ -25,3 +25,161 @@
   justify-content: center;
   align-items: center;
 }
+#dataLegend {
+  width: calc(18.125vw - 40px);
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.legendTitle {
+  margin: 12px 0px;
+}
+.legendOptions {
+  margin-bottom: 12px;
+}
+
+.legendOption {
+  display: flex;
+  padding: 4px 0px;
+  align-items: center;
+}
+.legendColor {
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+}
+.lg-fm-m {
+  background-color: #7cb8ff;
+  border-radius: 100%;
+}
+
+.lg-fm-f {
+  background-color: #ffa7a7;
+  border-radius: 100%;
+}
+.lg-fm-fm {
+  background-color: white;
+  border-radius: 100%;
+}
+.lg-ps-1 {
+  background-color: #00a980;
+  border-radius: 100%;
+}
+.lg-ps-2 {
+  background-color: #ffd800;
+  border-radius: 100%;
+}
+.lg-ps-3 {
+  background-color: #ff71a3;
+  border-radius: 100%;
+}
+.lg-ps-4 {
+  background-color: #7978f1;
+  border-radius: 100%;
+}
+.lg-ps-5 {
+  background-color: #ff9337;
+  border-radius: 100%;
+}
+.lg-ps-6 {
+  background-color: #7ed321;
+  border-radius: 100%;
+}
+.lg-ps-7 {
+  background-color: #0057ff;
+  border-radius: 100%;
+}
+.lg-ps-8 {
+  background-color: #ff006b;
+  border-radius: 100%;
+}
+.lg-ps-9 {
+  background-color: #ffffff;
+  border-radius: 100%;
+}
+.lg-ps-10 {
+  background-color: #21f2ff;
+  border-radius: 100%;
+}
+
+.txt-fm-m {
+  color: #7cb8ff;
+}
+
+.txt-fm-f {
+  color: #ffa7a7;
+}
+.txt-fm-fm {
+  color: white;
+}
+.interfaceOption {
+  width: calc(18.125vw - 40px);
+  margin-bottom: 16px;
+  padding: 20px;
+}
+.interfaceOptionTitle {
+  margin-bottom: 8px;
+}
+
+.checkboxes {
+  margin-bottom: 8px;
+}
+.inputRangeli {
+  display: flex;
+  flex-direction: column;
+}
+#lyricBox {
+  height: 30vh;
+  width: calc(100% - 40px);
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 20px;
+  overflow-y: scroll;
+  line-height: 28px;
+}
+#rangeYear {
+  margin: 8px;
+  appearance: auto;
+}
+#rangeYear:disabled {
+  background-color: initial;
+}
+
+#song_info {
+  width: 18.125vw;
+  /* width: calc(18.125vw - 40px); */
+}
+#albumCover {
+  width: 18.125vw;
+  height: 18.125vw;
+  margin-bottom: 20px;
+}
+#albumCover img {
+  width: 100%;
+  background-color: #40414e;
+}
+
+.songDesc {
+  margin-bottom: 8px;
+}
+
+/* input[type="range"] {
+        margin-top: 40px;
+        -webkit-appearance: none;
+        width: 100%;
+        height: 8px;
+        border-radius: 4px;
+        background: black;
+        outline: none;
+      }
+      
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: white;
+        cursor: pointer;
+      }} */
