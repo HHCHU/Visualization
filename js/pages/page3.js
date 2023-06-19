@@ -12,6 +12,7 @@ let canvasHeight;
 //DOM
 const p3MainCC = document.getElementById("p3MainCC");
 const p3LeftOverall = document.getElementById("p3LeftOverall");
+const p3RightOverall = document.getElementById("p3RightOverall");
 
 canvasWidth = p3MainCC.getBoundingClientRect().width;
 canvasHeight = p3MainCC.getBoundingClientRect().height;

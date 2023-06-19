@@ -75,6 +75,34 @@
 #p3MainR {
   width: 4.9vw;
 }
+.p3RightContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.personaImg {
+  width: 18.23vw;
+  margin-top: 9.26vh;
+  margin-bottom: 4.81vh;
+}
+.personaImg img {
+  width: 100%;
+}
+.personaHashtag {
+  width: 18.23vw;
+  margin-bottom: 4.63vh;
+}
+.personaDesc {
+  width: 18.23vw;
+}
+.p-pd {
+  margin-bottom: 4.63vh;
+}
+#p3RightOverall {
+  display: none;
+}
 #p3RightTap {
   width: 22.6vw;
   height: 100vh;

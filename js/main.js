@@ -84,9 +84,11 @@ const onClickNextPageBtn = (e) => {
     console.log("From", page3Status);
     if (page3Status === PAGE3_STATUS_COORDINATE) {
       showDOM(p3LeftOverall);
+      showDOM(p3RightOverall);
       page3Status = PAGE3_STATUS_IMP_OVERALL;
     } else if (page3Status === PAGE3_STATUS_IMP_OVERALL) {
       hideDOM(p3LeftOverall);
+      hideDOM(p3RightOverall);
       page3Status = PAGE3_STATUS_IMP_SUBJECT;
     } else if (page3Status === PAGE3_STATUS_IMP_SUBJECT) {
       page3Status = PAGE3_STATUS_IMP_ACTIVE;
