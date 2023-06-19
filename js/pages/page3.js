@@ -111,7 +111,7 @@ const onInputRangeActive = (e) => {
   } else if (sv == 0) {
     inputActive = "LOW";
   }
-  console.log(inputActive);
+  //   console.log(inputActive);
 };
 
 const setp3LeftSubject = (subject) => {

@@ -17,6 +17,8 @@ let p3g_sub_mid;
 let p3g_sub_low;
 
 let p3g_act_high;
+let p3g_act_mid;
+let p3g_act_low;
 
 let aDr = 1;
 let aDx = 0;
@@ -65,6 +67,8 @@ function preload() {
   p3g_sub_low = loadImage("assets/images/p3g_sub_low.png");
 
   p3g_act_high = loadImage("assets/images/p3g_act_high.png");
+  p3g_act_mid = loadImage("assets/images/p3g_act_mid.png");
+  p3g_act_low = loadImage("assets/images/p3g_act_low.png");
 
   // area_ps1 = loadImage("assets/images/area_ps1.png");
   // area_ps2 = loadImage("assets/images/area_ps2.png");
@@ -231,6 +235,14 @@ function drawImplicationActive() {
     image(p3g_act_high, width / 2, height / 2, width, height);
     drawArea("ps3");
     drawArea("ps4");
+  } else if (inputActive == "MID") {
+    image(p3g_act_mid, width / 2, height / 2, width, height);
+    drawArea("ps5");
+    drawArea("ps9");
+  } else if (inputActive == "LOW") {
+    image(p3g_act_low, width / 2, height / 2, width, height);
+    drawArea("ps1");
+    drawArea("ps6");
   }
 }
 function drawGrid() {
