@@ -76,6 +76,7 @@ const onClickNextPageBtn = (e) => {
     } else if ((page2Status = PAGE2_STATUS_AP_SD)) {
       closeAllPages();
       openPage(page3);
+      page2Status = PAGE2_STATUS_A_P_S_D;
       currentPage = "page3";
     }
   } else if (currentPage === "page3") {
@@ -87,6 +88,7 @@ const onClickNextPageBtn = (e) => {
     } else if (page3Status === PAGE3_STATUS_IMP_SUBJECT) {
       page3Status = PAGE3_STATUS_IMP_ACTIVE;
     } else if (page3Status === PAGE3_STATUS_IMP_ACTIVE) {
+      page3Status = PAGE3_STATUS_COORDINATE;
       currentPage = "pageEnd";
       closeAllPages();
       openPage(pageEnd);
