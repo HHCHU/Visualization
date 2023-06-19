@@ -77,7 +77,6 @@ function setup() {
   page3Canvas = createCanvas(canvasWidth, canvasHeight);
   page3Canvas.parent(p3MainCC);
   imageMode(CENTER);
-  fill(255);
   textAlign(CENTER, CENTER);
   textSize(16);
 }
@@ -135,6 +134,8 @@ function keyPressed() {
 }
 
 function drawCoordinate() {
+  noStroke();
+  fill(255);
   if (currentTitle === TITLE_LOVE_DIVE) {
     image(p3g_love_dive, width / 2, height / 2, width, height);
     text(currentTitle, width * 0.86 + 10, height * (1 - 0.93) + 50);
@@ -258,7 +259,18 @@ function drawArea(psKey) {
     aDx = 0.0;
     aDy = 0.01;
     aDr = 0.91;
+  } else if (psKey === "ps8") {
+    aDx = -0.01;
+    aDy = 0.0;
+    aDr = 0.94;
+  } else if (psKey === "ps9") {
+    aDx = 0.0;
+    aDy = 0.0;
+    aDr = 0.91;
   } else if (psKey === "ps10") {
+    aDx = -0.01;
+    aDy = 0.0;
+    aDr = 0.94;
   } else {
   }
   image(

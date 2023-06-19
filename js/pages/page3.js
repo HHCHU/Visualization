@@ -24,7 +24,7 @@ const showOverall = (ps) => {
   //LEFT
   clearDOMHTML(mainSongs);
   let psInfo = personaMainSongInfo[ps];
-  console.log(psInfo);
+  //   console.log(psInfo);
   let mainSongsData = psInfo.mainSongs;
   for (let msd of mainSongsData) {
     let mainSong = document.createElement("div");
