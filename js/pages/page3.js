@@ -9,6 +9,7 @@ let inputActive = "HIGH";
 
 let canvasWidth;
 let canvasHeight;
+
 //DOM
 const p3MainCC = document.getElementById("p3MainCC");
 const p3LeftOverall = document.getElementById("p3LeftOverall");
@@ -39,6 +40,8 @@ const resetPage3 = () => {
   //reset Slider
   hideDOM(rangeSubjectVertical);
   hideDOM(rangeActive);
+  rangeSubjectVertical.value = 2;
+  rangeActive.value = 2;
 };
 
 const showOverall = (ps) => {
@@ -80,5 +83,32 @@ const hideOverall = () => {
   hideDOM(p3RightOverall);
 };
 
+const onInputRangeSubjectVertical = (e) => {
+  let sv = e.currentTarget.value;
+  if (sv == 2) {
+    inputSubject = "HIGH";
+  } else if (sv == 1) {
+    inputSubject = "MID";
+  } else if (sv == 0) {
+    inputSubject = "LOW";
+  }
+  console.log(inputSubject);
+};
+
+const onInputRangeActive = (e) => {
+  let sv = e.currentTarget.value;
+  if (sv == 2) {
+    inputActive = "HIGH";
+  } else if (sv == 1) {
+    inputActive = "MID";
+  } else if (sv == 0) {
+    inputActive = "LOW";
+  }
+  console.log(inputActive);
+};
+
 canvasWidth = p3MainCC.getBoundingClientRect().width;
 canvasHeight = p3MainCC.getBoundingClientRect().height;
+
+rangeSubjectVertical.addEventListener("input", onInputRangeSubjectVertical);
+rangeActive.addEventListener("input", onInputRangeActive);

@@ -13,6 +13,8 @@ let p3g_overall;
 let p3g_psGraphs;
 
 let p3g_sub_high;
+let p3g_sub_mid;
+let p3g_sub_low;
 
 let p3g_act_high;
 
@@ -59,6 +61,8 @@ function preload() {
   }
 
   p3g_sub_high = loadImage("assets/images/p3g_sub_high.png");
+  p3g_sub_mid = loadImage("assets/images/p3g_sub_mid.png");
+  p3g_sub_low = loadImage("assets/images/p3g_sub_low.png");
 
   p3g_act_high = loadImage("assets/images/p3g_act_high.png");
 
@@ -213,6 +217,13 @@ function drawImplicationSubject() {
     image(p3g_sub_high, width / 2, height / 2, width, height);
     drawArea("ps7");
     drawArea("ps10");
+  } else if (inputSubject == "MID") {
+    image(p3g_sub_mid, width / 2, height / 2, width, height);
+    drawArea("ps6");
+  } else if (inputSubject == "LOW") {
+    image(p3g_sub_low, width / 2, height / 2, width, height);
+    drawArea("ps1");
+    drawArea("ps8");
   }
 }
 function drawImplicationActive() {
