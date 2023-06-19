@@ -32,7 +32,17 @@
 #p3LeftOverall {
   display: none;
 }
-#p3LeftSubject {
+#p3LeftSubjectHigh {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+#p3LeftSubjectMid {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+#p3LeftSubjectLow {
   display: none;
   flex-direction: column;
   align-items: center;

@@ -22,7 +22,9 @@ const personaHashtag = document.getElementById("personaHashtag");
 const personaDesc = document.getElementById("personaDesc");
 
 const rangeSubjectVertical = document.getElementById("rangeSubjectVertical");
-const p3LeftSubject = document.getElementById("p3LeftSubject");
+const p3LeftSubjectHigh = document.getElementById("p3LeftSubjectHigh");
+const p3LeftSubjectMid = document.getElementById("p3LeftSubjectMid");
+const p3LeftSubjectLow = document.getElementById("p3LeftSubjectLow");
 const p3RightSubject = document.getElementById("p3RightSubject");
 
 const rangeActive = document.getElementById("rangeActive");
@@ -33,6 +35,7 @@ const resetPage3 = () => {
   clearDOMHTML(personaImg);
   clearDOMHTML(personaHashtag);
   clearDOMHTML(personaDesc);
+  hideAllSubjects();
   //reset Variables
   page3Status = PAGE3_STATUS_COORDINATE;
   inputSubject = "HIGH";
@@ -95,7 +98,8 @@ const onInputRangeSubjectVertical = (e) => {
   } else if (sv == 0) {
     inputSubject = "LOW";
   }
-  console.log(inputSubject);
+  setp3LeftSubject(inputSubject);
+  //   console.log(inputSubject);
 };
 
 const onInputRangeActive = (e) => {
@@ -108,6 +112,22 @@ const onInputRangeActive = (e) => {
     inputActive = "LOW";
   }
   console.log(inputActive);
+};
+
+const setp3LeftSubject = (subject) => {
+  hideAllSubjects();
+  if (subject === "HIGH") {
+    showDOM(p3LeftSubjectHigh);
+  } else if (subject === "MID") {
+    showDOM(p3LeftSubjectMid);
+  } else if (subject === "LOW") {
+    showDOM(p3LeftSubjectLow);
+  }
+};
+const hideAllSubjects = () => {
+  hideDOM(p3LeftSubjectHigh);
+  hideDOM(p3LeftSubjectMid);
+  hideDOM(p3LeftSubjectLow);
 };
 
 canvasWidth = p3MainCC.getBoundingClientRect().width;
