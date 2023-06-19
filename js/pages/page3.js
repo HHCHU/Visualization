@@ -28,6 +28,10 @@ const p3LeftSubjectLow = document.getElementById("p3LeftSubjectLow");
 const p3RightSubject = document.getElementById("p3RightSubject");
 
 const rangeActive = document.getElementById("rangeActive");
+const p3LeftActiveHigh = document.getElementById("p3LeftActiveHigh");
+const p3LeftActiveMid = document.getElementById("p3LeftActiveMid");
+const p3LeftActiveLow = document.getElementById("p3LeftActiveLow");
+const p3RightActive = document.getElementById("p3RightActive");
 
 const resetPage3 = () => {
   //reset DOM
@@ -36,6 +40,7 @@ const resetPage3 = () => {
   clearDOMHTML(personaHashtag);
   clearDOMHTML(personaDesc);
   hideAllSubjects();
+  hideAllActives();
   //reset Variables
   page3Status = PAGE3_STATUS_COORDINATE;
   inputSubject = "HIGH";
@@ -111,6 +116,7 @@ const onInputRangeActive = (e) => {
   } else if (sv == 0) {
     inputActive = "LOW";
   }
+  setp3LeftActive(inputActive);
   //   console.log(inputActive);
 };
 
@@ -128,6 +134,22 @@ const hideAllSubjects = () => {
   hideDOM(p3LeftSubjectHigh);
   hideDOM(p3LeftSubjectMid);
   hideDOM(p3LeftSubjectLow);
+};
+
+const setp3LeftActive = (active) => {
+  hideAllActives();
+  if (active === "HIGH") {
+    showDOM(p3LeftActiveHigh);
+  } else if (active === "MID") {
+    showDOM(p3LeftActiveMid);
+  } else if (active === "LOW") {
+    showDOM(p3LeftActiveLow);
+  }
+};
+const hideAllActives = () => {
+  hideDOM(p3LeftActiveHigh);
+  hideDOM(p3LeftActiveMid);
+  hideDOM(p3LeftActiveLow);
 };
 
 canvasWidth = p3MainCC.getBoundingClientRect().width;

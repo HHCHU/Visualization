@@ -91,7 +91,8 @@ const onClickNextPageBtn = (e) => {
       hideDOM(p3LeftOverall);
       hideDOM(p3RightOverall);
       showDOM(rangeSubjectVertical);
-      showDOM(p3LeftSubjectHigh);
+      // showDOM(p3LeftSubjectHigh);
+      setp3LeftSubject("HIGH");
       showDOM(p3RightSubject);
       page3Status = PAGE3_STATUS_IMP_SUBJECT;
     } else if (page3Status === PAGE3_STATUS_IMP_SUBJECT) {
@@ -99,9 +100,14 @@ const onClickNextPageBtn = (e) => {
       hideAllSubjects();
       hideDOM(p3RightSubject);
       showDOM(rangeActive);
+      // showDOM(p3LeftActiveHigh);
+      setp3LeftActive("HIGH");
+      showDOM(p3RightActive);
       page3Status = PAGE3_STATUS_IMP_ACTIVE;
     } else if (page3Status === PAGE3_STATUS_IMP_ACTIVE) {
       hideDOM(rangeActive);
+      hideAllSubjects();
+      hideDOM(p3RightActive);
       currentPage = "pageEnd";
       closeAllPages();
       openPage(pageEnd);
