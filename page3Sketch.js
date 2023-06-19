@@ -1,7 +1,7 @@
 let page3Canvas;
 let p3g_ps10;
 function preload() {
-  p3g_ps10 = loadImage("../assets/images/p3g_ps10.png");
+  p3g_ps10 = loadImage("assets/images/p3g_ps10.png");
 }
 function setup() {
   page3Canvas = createCanvas(canvasWidth, canvasHeight);
