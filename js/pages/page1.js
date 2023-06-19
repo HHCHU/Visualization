@@ -114,7 +114,6 @@ const getLyricWithLineNo = () => {
     let line = `${lineNums[i]}. ${lyrics[i]}`;
     lines.push(line);
   }
-  // console.log(lines);
 
   return lines.join("\n");
 };
