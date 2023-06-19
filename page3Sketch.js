@@ -250,7 +250,14 @@ function drawArea(psKey) {
     aDx = -0.02;
     aDy = 0.0;
     aDr = 0.9;
+  } else if (psKey === "ps6") {
+    aDx = -0.02;
+    aDy = 0.01;
+    aDr = 0.94;
   } else if (psKey === "ps7") {
+    aDx = 0.0;
+    aDy = 0.01;
+    aDr = 0.91;
   } else if (psKey === "ps10") {
   } else {
   }

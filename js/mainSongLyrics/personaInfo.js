@@ -187,4 +187,73 @@ const personaMainSongInfo = {
                 
                 `,
   },
+  ps6: {
+    personaName: "약한 자아",
+    xR: 0.21,
+    yR: 0.67,
+    dR: 0.13,
+    color: "rgba(126, 211, 33, 0.2)",
+    mainSongs: [
+      {
+        title: "Fake Love",
+        singer: "방탄소년단",
+        lyricHTML: lyric_fake_love,
+      },
+      {
+        title: "아름다워 (Beautiful)",
+        singer: "몬스타엑스",
+        lyricHTML: lyric_beautiful,
+      },
+      {
+        title: "저주인형",
+        singer: "VIXX (빅스)",
+        lyricHTML: lyric_boodoo_doll,
+      },
+    ],
+    profileHTML: `<img src="assets/images/profile_ps6.png" alt="" />`,
+    hashtag: "#주도권_상실 #구차 #매달림 #종속적",
+    descHTML: `
+                <p class="p-pd">
+                ‘<span class="txt-ps-6">약한 자아</span>’는 관계에서 ‘나’의 주체성을 잃어버린 페르소나이다. 이들은 자신의 마음을 정확히 알고 표현하지 못하며, 상대방에게 관계의 주도권을 위탁한다.
+                <br /><br /><br /><br />
+                ‘<span class="txt-ps-6">약한 자아</span>’는 종종 자신의 마음을 자신도 모르는 혼란 상태에 빠져있으며, 특히 이별 상황에서 이별을 부정하고 상대방에게 매달리는 모습을 보여준다.
+                </p>
+                
+                `,
+  },
+  ps7: {
+    personaName: "강한 자아",
+    xR: 0.65,
+    yR: 0.3,
+    dR: 0.1,
+    color: "rgba(0, 87, 255, 0.2)",
+    mainSongs: [
+      {
+        title: "Fake Love",
+        singer: "방탄소년단",
+        lyricHTML: lyric_fake_love,
+      },
+      {
+        title: "아름다워 (Beautiful)",
+        singer: "몬스타엑스",
+        lyricHTML: lyric_beautiful,
+      },
+      {
+        title: "저주인형",
+        singer: "VIXX (빅스)",
+        lyricHTML: lyric_boodoo_doll,
+      },
+    ],
+    profileHTML: `<img src="assets/images/profile_ps7.png" alt="" />`,
+    hashtag: "#주체적 #자기중심적 #내마음에_솔직한",
+    descHTML: `
+                <p class="p-pd">
+                ‘<span class="txt-ps-7">강한 자아</span>’ 페르소나의 가사에서는 ‘나’라는 주체가 강하게 드러난다. 이들은 자기중심적인 태도로 관계를 인식한다.
+                <br /><br /><br /><br />
+                이들은 ‘신여성/신남성’과 같은 자세로 연애 관계 자체가 본인에게 얼마나 부수적이고 불필요한 것인지에 대해 이야기하기도 하고, 이별 상황에서 상대방에게 대놓고 짜증부리거나 그를 질책하며, 가감없이 본인의 마음을 표현한다.
+                <br /><br /><br /><br />
+                구애 시에도 ‘<span class="txt-ps-7">강한 자아</span>’는 상대방의 마음보다 본인의 마음이 중요하다는 인식을 드러내며, 본인의 마음에 솔직하게, 당당하게 표현하는 것에 주력한다.                </p>
+                
+                `,
+  },
 };
