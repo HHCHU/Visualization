@@ -38,6 +38,7 @@ let areas_ps;
 
 //Overall
 let currentPS = "";
+let currentSongTitle = "";
 let hoverPs = {};
 let overallShow = false;
 
@@ -100,6 +101,12 @@ function draw() {
   }
   // image(p3g_default, width / 2, height / 2, width, height);
   drawGrid();
+  if (keyIsPressed) {
+    stroke(255);
+    fill(255, 100);
+    circle(mouseX, mouseY, 40);
+    console.log((mouseX / width).toFixed(3), (mouseY / height).toFixed(3));
+  }
 }
 
 function mouseClicked() {
@@ -175,6 +182,15 @@ function drawOverallSelected() {
   let p3g_psGraph = p3g_psGraphs[currentPS];
   image(p3g_psGraph, width / 2, height / 2, width, height);
   drawArea(currentPS);
+  let currentPSInfo = personaMainSongInfo[currentPS];
+  let personaSongData = currentPSInfo.mainSongs;
+  for (let song of personaSongData) {
+    if (song.title === currentSongTitle) {
+      stroke(255);
+      fill(255, 100);
+      circle(song.rX * width, song.rY * height, 40);
+    }
+  }
 }
 
 function drawOverallSelect() {

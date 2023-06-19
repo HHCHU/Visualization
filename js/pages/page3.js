@@ -7,6 +7,8 @@ let page3Status = PAGE3_STATUS_COORDINATE;
 let inputSubject = "HIGH";
 let inputActive = "HIGH";
 
+let p3OverallSongSelectFuncs = [];
+
 let canvasWidth;
 let canvasHeight;
 
@@ -18,6 +20,7 @@ const mainSongLyric = document.getElementById("mainSongLyric");
 
 const p3RightOverall = document.getElementById("p3RightOverall");
 const personaImg = document.getElementById("personaImg");
+const personaName = document.getElementById("personaName");
 const personaHashtag = document.getElementById("personaHashtag");
 const personaDesc = document.getElementById("personaDesc");
 
@@ -58,9 +61,11 @@ const resetPage3 = () => {
 const showOverall = (ps) => {
   //LEFT
   clearDOMHTML(mainSongs);
+  p3OverallSongSelectFuncs = [];
   let psInfo = personaMainSongInfo[ps];
   //   console.log(psInfo);
   let mainSongsData = psInfo.mainSongs;
+  let firstSelected = false;
   for (let msd of mainSongsData) {
     let mainSong = document.createElement("div");
     // console.log(mainSong);
@@ -75,16 +80,29 @@ const showOverall = (ps) => {
 
     mainSong.appendChild(mainSongTitle);
     mainSong.appendChild(mainSongSinger);
-    mainSong.addEventListener("click", () => {
-      console.log("update lyrics");
+    const onClickSong = () => {
+      //   console.log("update lyrics");
+      for (let song of mainSongs.childNodes) {
+        song.classList.remove("selected");
+      }
+      currentSongTitle = msd.title;
       mainSongLyric.innerHTML = msd.lyricHTML;
-    });
+    };
+    mainSong.addEventListener("click", onClickSong);
+    p3OverallSongSelectFuncs.push(onClickSong);
+    if (!firstSelected) {
+      currentSongTitle = msd.title;
+      mainSong.classList.add("selected");
+      mainSongLyric.innerHTML = msd.lyricHTML;
+      firstSelected = true;
+    }
     mainSongs.appendChild(mainSong);
   }
   //RIGHT
   personaImg.innerHTML = psInfo.profileHTML;
   showDOM(p3LeftOverall);
   showDOM(p3RightOverall);
+  personaName.innerText = psInfo.personaName;
   personaHashtag.innerText = psInfo.hashtag;
   personaDesc.innerHTML = psInfo.descHTML;
 };

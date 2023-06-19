@@ -8,6 +8,7 @@
   width: 22.6vw;
   height: 100vh;
   background-color: rgba(64, 65, 78, 0.5);
+  overflow-y: scroll;
 }
 #p3Main {
   display: flex;
@@ -108,10 +109,18 @@
   border-radius: 10px;
   margin: 2px;
   font-size: 14px;
+  overflow-x: hidden;
 }
+
+.mainSong.selected {
+  background-color: #4cb4ff;
+}
+
 .mainSongTitle {
+  overflow-x: hidden;
 }
 .mainSongSinger {
+  overflow-x: hidden;
 }
 #mainSongLyric {
   height: 66.67vh;
@@ -121,7 +130,9 @@
 }
 .p-msl {
   font-size: 13px;
-  /* margin-bottom: 13px; */
+}
+.p-msl.highlighted {
+  color: #4db4ff;
 }
 #p3MainC {
   width: 45vw;
@@ -154,10 +165,14 @@
 #personaImg {
   width: 18.23vw;
   margin-top: 9.26vh;
-  margin-bottom: 4.81vh;
 }
 #personaImg img {
   width: 100%;
+}
+#personaName {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 4.81vh;
 }
 #personaHashtag {
   width: 18.23vw;
@@ -193,6 +208,7 @@
   width: 22.6vw;
   height: 100vh;
   background-color: rgba(64, 65, 78, 0.5);
+  overflow-y: scroll;
 }
 #rangeSubjectVertical {
   position: absolute;
