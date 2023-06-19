@@ -63,7 +63,7 @@ const clearDOMHTML = (dom) => {
 };
 
 const onClickNextPageBtn = (e) => {
-  console.log("From", currentPage);
+  // console.log("From", currentPage);
 
   if (currentPage === "page1") {
     closeAllPages();
@@ -125,11 +125,15 @@ const onClickNextPageBtn = (e) => {
     openPage(pageEnd);
     nextPageBtn.innerText = "To Start";
     hideDOM(homeBtn);
+    hideDOM(nextPageBtn);
+    endingIdx = 0;
+    endingMsg.innerHTML = "";
+    writeEnding(endingMsg);
   } else if (currentPage === "pageEnd") {
     closeAllPages();
     openPage1();
   }
-  console.log("To", currentPage);
+  // console.log("To", currentPage);
 };
 
 // Add Event Listener

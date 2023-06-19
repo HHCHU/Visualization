@@ -49,7 +49,7 @@ function interfaceSetup() {
   };
 
   legends.forEach((legend) => {
-    console.log(legend.id);
+    // console.log(legend.id);
     legend.addEventListener("mouseover", highlightOn);
     legend.addEventListener("mouseleave", highlightOff);
     legend.addEventListener("click", onClickLegend);

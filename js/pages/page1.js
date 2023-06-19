@@ -7,7 +7,7 @@ let sendBtnActive = false;
 let currentReply = "";
 // let crDOM;
 let crIdx = 0;
-let crSpeed = 100;
+let crSpeed = 15;
 let crSv = 3; // Current Reply Speed Variance
 let dialogScrollUpDetected = false;
 let dialogLastScrollPosition;
@@ -164,19 +164,23 @@ const generateChatThread = (speaker) => {
   qBox.classList.add("ThreadBox");
   qBox.classList.add(speaker);
   qIcon.classList.add("ThreadIcon");
-  qIcon.classList.add(speaker);
+  // qIcon.classList.add(speaker);
+  let qIconName = "";
   qText.classList.add("ThreadText");
   if (speaker === "me") {
+    qIconName = "ME";
     qText.innerText = chatQuestion + getLyricWithLineNo();
     // qText.innerText = chatQuestion + lyricWithLineNo[currentTitle];
   }
   if (speaker === "gpt") {
+    qIconName = "GPT";
     currentReply = getLyricWithLineAnalysis();
     crIdx = 0;
     setTimeout(() => {
       gptReply(qText);
     }, 100);
   }
+  qIcon.innerHTML = `<img src="assets/images/icon${qIconName}.png" alt="" />`;
   qBox.appendChild(qIcon);
   qBox.appendChild(qText);
   chatDialogThread.appendChild(qBox);

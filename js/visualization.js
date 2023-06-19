@@ -10,7 +10,7 @@ const lyricBox = document.getElementById("lyricBox");
 const graphFunctions = {};
 
 let vw = visualization.getBoundingClientRect().width;
-console.log(vw);
+// console.log(vw);
 let vm = vw * 0.1;
 
 let margin = { top: vm, right: vm, bottom: vm, left: vm };
@@ -56,7 +56,7 @@ let legend_fm_to_fm_name = {
 };
 
 d3.csv("data/data_analysis.csv").then((data) => {
-  console.log(data);
+  // console.log(data);
   // Add X axis
 
   let x = d3.scaleLinear().domain([0, 1]).range([0, svgWidth]);

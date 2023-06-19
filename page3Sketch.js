@@ -100,13 +100,13 @@ function draw() {
     drawImplicationActive();
   }
   // image(p3g_default, width / 2, height / 2, width, height);
-  drawGrid();
-  if (keyIsPressed) {
-    stroke(255);
-    fill(255, 100);
-    circle(mouseX, mouseY, 40);
-    console.log((mouseX / width).toFixed(3), (mouseY / height).toFixed(3));
-  }
+  // drawGrid();
+  // if (keyIsPressed) {
+  //   stroke(255);
+  //   fill(255, 100);
+  //   circle(mouseX, mouseY, 40);
+  //   console.log((mouseX / width).toFixed(3), (mouseY / height).toFixed(3));
+  // }
 }
 
 function mouseClicked() {
@@ -126,26 +126,25 @@ function mouseClicked() {
 }
 function keyPressed() {
   // UP_ARROW, DOWN_ARROW, LEFT_ARROW, RIGHT_ARROW
-
-  if (keyCode === UP_ARROW) {
-    aDy -= 0.01;
-  }
-  if (keyCode === DOWN_ARROW) {
-    aDy += 0.01;
-  }
-  if (keyCode === LEFT_ARROW) {
-    aDx -= 0.01;
-  }
-  if (keyCode === RIGHT_ARROW) {
-    aDx += 0.01;
-  }
-  if (keyCode === BACKSPACE) {
-    aDr -= 0.01;
-  }
-  if (keyCode === ENTER) {
-    aDr += 0.01;
-  }
-  console.log(aDx, aDy, aDr);
+  // if (keyCode === UP_ARROW) {
+  //   aDy -= 0.01;
+  // }
+  // if (keyCode === DOWN_ARROW) {
+  //   aDy += 0.01;
+  // }
+  // if (keyCode === LEFT_ARROW) {
+  //   aDx -= 0.01;
+  // }
+  // if (keyCode === RIGHT_ARROW) {
+  //   aDx += 0.01;
+  // }
+  // if (keyCode === BACKSPACE) {
+  //   aDr -= 0.01;
+  // }
+  // if (keyCode === ENTER) {
+  //   aDr += 0.01;
+  // }
+  // console.log(aDx, aDy, aDr);
 }
 
 function drawCoordinate() {
