@@ -243,29 +243,15 @@ function drawArea(psKey) {
     aDy = 0.0;
     aDr = 0.88;
   } else if (psKey === "ps4") {
-    image(
-      areas_ps["ps4"],
-      width / 2 - width * 0.05,
-      height / 2,
-      width * 0.9,
-      height * 0.9
-    );
+    aDx = -0.04;
+    aDy = 0.01;
+    aDr = 0.9;
+  } else if (psKey === "ps5") {
+    aDx = -0.02;
+    aDy = 0.0;
+    aDr = 0.9;
   } else if (psKey === "ps7") {
-    image(
-      areas_ps["ps7"],
-      width / 2,
-      height / 2 + height * 0.05,
-      width,
-      height
-    );
   } else if (psKey === "ps10") {
-    image(
-      areas_ps["ps10"],
-      width / 2,
-      height / 2 + height * 0.05,
-      width,
-      height
-    );
   } else {
   }
   image(
