@@ -1,0 +1,121 @@
+#pageEnd {
+  display: flex;
+  flex-direction: row;
+  opacity: 0;
+}
+
+#chatContent_END {
+  width: 84.6875vw;
+  height: 100vh;
+  position: relative;
+}
+#chatDialogThread_END {
+  padding-right: 0;
+  display: none;
+}
+
+/* #chatDialogTitle {
+  margin-top: 11.6vh;
+  text-align: center;
+  font-size: 45px;
+  margin-bottom: 3.33vh;
+}
+#chatDialogTitleFirstLine {
+  line-height: 40px;
+}
+#chatDialogTitleSecondLine {
+  letter-spacing: 2px;
+  margin-bottom: 2px;
+}
+#chatDialogSubTitle {
+  font-size: 35px;
+  font-weight: 100;
+  letter-spacing: 3px;
+}
+
+#chatDialogHowtoUse {
+  display: flex;
+  flex-direction: row;
+} */
+#chatInterface_END {
+  /* width: 79.6vw; */
+  width: 84.6875vw;
+  height: 28.24vh;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+#chatInterfaceWindow_END {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+#chatInterfaceShadow_END {
+  width: 100%;
+  height: 13.7vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(rgba(62, 63, 74, 0) 0%, #343540 50%);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+#chatInterfaceInput_END {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  /* width: 84.6875vw; */
+  width: 79.6vw;
+  padding-right: 5.0875vw;
+  height: 21.11vh;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #343540;
+}
+#chatPrompt_END {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(50vw - 32px);
+  min-height: 5.18vh;
+  /* margin-top: 3.33vh; */
+  margin-bottom: 12px;
+  padding: 0px 16px;
+  background: #3e3f4a;
+  border-radius: 6px;
+}
+#chatPromptPlaceholder_END {
+  color: #8e8ea0;
+}
+#chatPromptTextBox {
+  width: calc(50vw - 32px - 29px - 16px);
+  display: none;
+  margin: 10px;
+}
+#chatPromptBtn_END {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 29px;
+  height: 29px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  /* background-color: #10a37f; */
+  cursor: default;
+}
+#promptSendBtnInactive_END {
+}
+#promptSendBtnActive_END {
+  display: none;
+}
+
+#chatPInputItems_END {
+  width: 50vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 5.09vh;
+  margin-bottom: 6.48vh;
+}

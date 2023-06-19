@@ -10,7 +10,9 @@ const page4 = document.getElementById("page4");
 const page5 = document.getElementById("page5");
 const page6 = document.getElementById("page6");
 const page7 = document.getElementById("page7");
-const pages = [page1, page2, page3, page4, page5, page6, page7];
+
+const pageEnd = document.getElementById("pageEnd");
+const pages = [page1, page2, page3, page4, page5, page6, page7, pageEnd];
 let currentPage = "page1";
 let currentTitle = "";
 const nextPageBtn = document.getElementById("nextPageBtn");
@@ -84,6 +86,11 @@ const onClickNextPageBtn = (e) => {
       page3Status = PAGE3_STATUS_IMP_SUBJECT;
     } else if (page3Status === PAGE3_STATUS_IMP_SUBJECT) {
       page3Status = PAGE3_STATUS_IMP_ACTIVE;
+    } else if (page3Status === PAGE3_STATUS_IMP_ACTIVE) {
+      currentPage = "pageEnd";
+      closeAllPages();
+      openPage(pageEnd);
+      nextPageBtn.innerText = "To Start";
     }
     console.log("To", page3Status);
     // <<<<<<< Updated upstream
@@ -114,6 +121,10 @@ const onClickNextPageBtn = (e) => {
   } else if (currentPage === "page8") {
     closeAllPages();
     onClick = location.reload(true);
+  } else if (currentPage === "pageEnd") {
+    closeAllPages();
+    openPage1();
+    // onClick = location.reload(true);
   }
   console.log("To", currentPage);
 };

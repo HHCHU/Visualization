@@ -32,6 +32,7 @@ const openPage1 = () => {
   closeAllPages();
   openPage(page1);
   resetPage1();
+  nextPageBtn.innerText = "Next";
 };
 
 const resetPage1 = () => {
