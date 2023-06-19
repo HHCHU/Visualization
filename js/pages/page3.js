@@ -7,7 +7,7 @@ let page3Status = PAGE3_STATUS_COORDINATE;
 let inputSubject = "HIGH";
 let inputActive = "HIGH";
 
-let p3OverallSongSelectFuncs = [];
+// let p3OverallSongSelectFuncs = [];
 
 let canvasWidth;
 let canvasHeight;
@@ -61,7 +61,7 @@ const resetPage3 = () => {
 const showOverall = (ps) => {
   //LEFT
   clearDOMHTML(mainSongs);
-  p3OverallSongSelectFuncs = [];
+  // p3OverallSongSelectFuncs = [];
   let psInfo = personaMainSongInfo[ps];
   //   console.log(psInfo);
   let mainSongsData = psInfo.mainSongs;
@@ -85,11 +85,12 @@ const showOverall = (ps) => {
       for (let song of mainSongs.childNodes) {
         song.classList.remove("selected");
       }
+      mainSong.classList.add("selected");
       currentSongTitle = msd.title;
       mainSongLyric.innerHTML = msd.lyricHTML;
     };
     mainSong.addEventListener("click", onClickSong);
-    p3OverallSongSelectFuncs.push(onClickSong);
+    // p3OverallSongSelectFuncs.push(onClickSong);
     if (!firstSelected) {
       currentSongTitle = msd.title;
       mainSong.classList.add("selected");
