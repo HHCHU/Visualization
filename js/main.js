@@ -11,8 +11,9 @@ const page3 = document.getElementById("page3");
 // const page6 = document.getElementById("page6");
 // const page7 = document.getElementById("page7");
 
+const pageVis = document.getElementById("pageVis");
 const pageEnd = document.getElementById("pageEnd");
-const pages = [page1, page2, page3, pageEnd];
+const pages = [page1, page2, page3, pageVis, pageEnd];
 let currentPage = "page1";
 let currentTitle = "";
 const nextPageBtn = document.getElementById("nextPageBtn");
@@ -108,13 +109,22 @@ const onClickNextPageBtn = (e) => {
       hideDOM(rangeActive);
       hideAllSubjects();
       hideDOM(p3RightActive);
-      currentPage = "pageEnd";
+      // currentPage = "pageEnd";
+      currentPage = "pageVis";
       closeAllPages();
-      openPage(pageEnd);
-      nextPageBtn.innerText = "To Start";
-      hideDOM(homeBtn);
+      openPage(pageVis);
+      // openPage(pageEnd);
+      // nextPageBtn.innerText = "To Start";
+      // hideDOM(homeBtn);
     }
     console.log("To", page3Status);
+  } else if (currentPage === "pageVis") {
+    closeAllPages();
+    currentPage = "pageEnd";
+    closeAllPages();
+    openPage(pageEnd);
+    nextPageBtn.innerText = "To Start";
+    // hideDOM(homeBtn);
   } else if (currentPage === "pageEnd") {
     closeAllPages();
     openPage1();

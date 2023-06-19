@@ -7,13 +7,13 @@ console.log(vw);
 let vm = vw * 0.1;
 
 let margin = { top: vm, right: vm, bottom: vm, left: vm };
-let width = vw - (margin.left + margin.right);
-let height = vw - (margin.top + margin.bottom);
+let svgWidth = vw - (margin.left + margin.right);
+let svgHeight = vw - (margin.top + margin.bottom);
 let svg = d3
   .select("#d3graph")
   .append("svg")
-  .attr("width", width + margin.left + margin.right)
-  .attr("height", height + margin.top + margin.bottom)
+  .attr("width", svgWidth + margin.left + margin.right)
+  .attr("height", svgHeight + margin.top + margin.bottom)
   .append("g")
   .attr("transform", `translate(${margin.left}, ${margin.top})`);
 let personaColor = {
@@ -48,11 +48,11 @@ let legend_fm_to_fm_name = {
   fm: "혼성",
 };
 
-d3.csv("data/data.csv").then((data) => {
+d3.csv("data/data_analysis.csv").then((data) => {
   console.log(data);
   // Add X axis
 
-  let x = d3.scaleLinear().domain([0, 1]).range([0, width]);
+  let x = d3.scaleLinear().domain([0, 1]).range([0, svgWidth]);
 
   // Create a linear gradient
   const xGradient = svg
@@ -61,7 +61,7 @@ d3.csv("data/data.csv").then((data) => {
     .attr("gradientUnits", "userSpaceOnUse")
     .attr("x1", 0)
     .attr("y1", 0)
-    .attr("x2", width)
+    .attr("x2", svgWidth)
     .attr("y2", 0);
 
   // Create a linear gradient
@@ -70,7 +70,7 @@ d3.csv("data/data.csv").then((data) => {
     .attr("id", "yAxisGradient")
     .attr("gradientUnits", "userSpaceOnUse")
     .attr("x1", 0)
-    .attr("y1", height)
+    .attr("y1", svgHeight)
     .attr("x2", 0)
     .attr("y2", 0);
 
@@ -92,9 +92,9 @@ d3.csv("data/data.csv").then((data) => {
     .style("stroke-width", 3)
     .style("stroke-linecap", "round")
     .attr("x1", 0)
-    .attr("y1", height)
-    .attr("x2", width)
-    .attr("y2", height)
+    .attr("y1", svgHeight)
+    .attr("x2", svgWidth)
+    .attr("y2", svgHeight)
     .attr("opacity", 0.8);
 
   svg
@@ -104,9 +104,9 @@ d3.csv("data/data.csv").then((data) => {
     .style("stroke-width", 2)
     .style("stroke-linecap", "round")
     .attr("x1", 0)
-    .attr("y1", 0.6 * height)
-    .attr("x2", width)
-    .attr("y2", 0.6 * height)
+    .attr("y1", 0.6 * svgHeight)
+    .attr("x2", svgWidth)
+    .attr("y2", 0.6 * svgHeight)
     .attr("opacity", 0.3);
 
   svg
@@ -115,7 +115,7 @@ d3.csv("data/data.csv").then((data) => {
     .style("stroke-width", 3)
     .style("stroke-linecap", "round")
     .attr("x1", 0)
-    .attr("y1", height)
+    .attr("y1", svgHeight)
     .attr("x2", 0)
     .attr("y2", 0)
     .attr("opacity", 0.8);
@@ -126,9 +126,9 @@ d3.csv("data/data.csv").then((data) => {
     .style("stroke-dasharray", "8, 8")
     .style("stroke-width", 2)
     .style("stroke-linecap", "round")
-    .attr("x1", 0.66 * width)
-    .attr("y1", height)
-    .attr("x2", 0.66 * width)
+    .attr("x1", 0.66 * svgWidth)
+    .attr("y1", svgHeight)
+    .attr("x2", 0.66 * svgWidth)
     .attr("y2", 0)
     .attr("opacity", 0.3);
 
@@ -146,7 +146,7 @@ d3.csv("data/data.csv").then((data) => {
     .style("font-size", "20px")
     .attr("dy", ".35em")
     .attr("text-anchor", "middle")
-    .attr("transform", `translate(-30,${height - 10}) rotate(0)`)
+    .attr("transform", `translate(-30,${svgHeight - 10}) rotate(0)`)
     .text("종속");
 
   svg
@@ -155,7 +155,7 @@ d3.csv("data/data.csv").then((data) => {
     .style("font-size", "20px")
     .attr("dy", ".35em")
     .attr("text-anchor", "middle")
-    .attr("transform", `translate(20,${height + 20}) rotate(0)`)
+    .attr("transform", `translate(20,${svgHeight + 20}) rotate(0)`)
     .text("수동");
   svg
     .append("text")
@@ -163,7 +163,10 @@ d3.csv("data/data.csv").then((data) => {
     .style("font-size", "20px")
     .attr("dy", ".35em")
     .attr("text-anchor", "middle")
-    .attr("transform", `translate(${width - 20},${height + 20}) rotate(0)`)
+    .attr(
+      "transform",
+      `translate(${svgWidth - 20},${svgHeight + 20}) rotate(0)`
+    )
     .text("능동");
 
   //   let xAxis = d3.axisBottom(x).tickValues([]).ticks(0).tickFormat("");
@@ -173,7 +176,7 @@ d3.csv("data/data.csv").then((data) => {
   //     .call(xAxis);
 
   // Add Y axis
-  let y = d3.scaleLinear().domain([0, 1]).range([height, 0]);
+  let y = d3.scaleLinear().domain([0, 1]).range([svgHeight, 0]);
   //   let yAxis = d3
   //     .axisLeft(y)
   //     .ticks(0)
