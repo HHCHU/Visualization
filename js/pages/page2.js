@@ -181,18 +181,22 @@ const change_Graph_A_P_S_D = () => {
 const onClickChatItemLoveDive = () => {
   currentTitle = "LOVE DIVE";
   createPage2();
+  page2Status = PAGE2_STATUS_A_P_S_D;
 };
 const onClickChatItemTroubleMaker = () => {
   currentTitle = "Trouble Maker";
   createPage2();
+  page2Status = PAGE2_STATUS_A_P_S_D;
 };
 const onClickChatItemEmpty = () => {
   currentTitle = "공허해";
   createPage2();
+  page2Status = PAGE2_STATUS_A_P_S_D;
 };
 const onClickChatItemChainedUp = () => {
   currentTitle = "사슬";
   createPage2();
+  page2Status = PAGE2_STATUS_A_P_S_D;
 };
 
 chatItemLoveDive.addEventListener("click", onClickChatItemLoveDive);

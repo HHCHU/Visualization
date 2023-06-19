@@ -1,6 +1,3 @@
-// 343540
-let canvasWidth;
-let canvasHeight;
 //DOM
 const p7MainCC = document.getElementById("p7MainCC");
 

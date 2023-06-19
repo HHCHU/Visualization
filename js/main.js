@@ -1,3 +1,8 @@
+const TITLE_LOVE_DIVE = "LOVE DIVE";
+const TITLE_TROUBLE_MAKER = "Trouble Maker";
+const TITLE_EMPTY = "공허해";
+const TITLE_CHAINED_UP = "사슬";
+
 const page1 = document.getElementById("page1");
 const page2 = document.getElementById("page2");
 const page3 = document.getElementById("page3");
@@ -72,10 +77,20 @@ const onClickNextPageBtn = (e) => {
       currentPage = "page3";
     }
   } else if (currentPage === "page3") {
-    closeAllPages();
-    currentPage = "page4";
-    openPage(page4);
-    createPage2();
+    console.log("From", page3Status);
+    if (page3Status === PAGE3_STATUS_COORDINATE) {
+      page3Status = PAGE3_STATUS_IMP_OVERALL;
+    } else if (page3Status === PAGE3_STATUS_IMP_OVERALL) {
+      page3Status = PAGE3_STATUS_IMP_SUBJECT;
+    } else if (page3Status === PAGE3_STATUS_IMP_SUBJECT) {
+      page3Status = PAGE3_STATUS_IMP_ACTIVE;
+    }
+    console.log("To", page3Status);
+    // <<<<<<< Updated upstream
+    // closeAllPages();
+    // currentPage = "page4";
+    // openPage(page4);
+    // createPage2();
   } else if (currentPage === "page4") {
     closeAllPages();
     currentPage = "page5";
@@ -98,10 +113,16 @@ const onClickNextPageBtn = (e) => {
     createPage2();
   } else if (currentPage === "page8") {
     closeAllPages();
-    onClick=location.reload(true);
+    onClick = location.reload(true);
   }
   console.log("To", currentPage);
 };
+// PAGE3_STATUS_IMP_OVERALL
+// const PAGE3_STATUS_COORDINATE = "PAGE3_STATUS_COORDINATE";
+// const PAGE3_STATUS_IMP_SUBJECT = "PAGE3_STATUS_IMP_SUBJECT";
+// const PAGE3_STATUS_IMP_ACTIVE = "PAGE3_STATUS_IMP_ACTIVE";
+// //
+// let page3Status = PAGE3_STATUS_COORDINATE;
 
 // Add Event Listener
 nextPageBtn.addEventListener("click", onClickNextPageBtn);
