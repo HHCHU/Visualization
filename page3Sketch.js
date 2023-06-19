@@ -112,7 +112,7 @@ function mouseClicked() {
 }
 function keyPressed() {
   // UP_ARROW, DOWN_ARROW, LEFT_ARROW, RIGHT_ARROW
-  console.log(aDx, aDy, aDr);
+
   if (keyCode === UP_ARROW) {
     aDy -= 0.01;
   }
@@ -131,6 +131,7 @@ function keyPressed() {
   if (keyCode === ENTER) {
     aDr += 0.01;
   }
+  console.log(aDx, aDy, aDr);
 }
 
 function drawCoordinate() {
@@ -231,16 +232,16 @@ function drawGrid() {
 function drawArea(psKey) {
   if (psKey === "ps1") {
     aDx = -0.01;
-    aDy = 0.02;
+    aDy = 0.0;
     aDr = 0.85;
+  } else if (psKey === "ps2") {
+    aDx = -0.01;
+    aDy = 0.0;
+    aDr = 0.9;
   } else if (psKey === "ps3") {
-    image(
-      areas_ps["ps3"],
-      width / 2 + width * 0.05,
-      height / 2,
-      width * 0.8,
-      height * 0.8
-    );
+    aDx = 0.02;
+    aDy = 0.0;
+    aDr = 0.88;
   } else if (psKey === "ps4") {
     image(
       areas_ps["ps4"],
