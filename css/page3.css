@@ -47,6 +47,21 @@
   flex-direction: column;
   align-items: center;
 }
+#p3LeftActiveHigh {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+#p3LeftActiveMid {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+#p3LeftActiveLow {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
 .personaCard {
   display: flex;
   flex-direction: column;
