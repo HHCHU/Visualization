@@ -18,6 +18,45 @@
 #p3MainL {
   width: 4.9vw;
 }
+.p3LeftContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#p3LeftOverall {
+  display: none;
+}
+.mainSongs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 6vh;
+}
+.mainSong {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 6.09375vw;
+  height: 3.98vh;
+  background-color: #343540;
+  border-radius: 10px;
+  margin: 2px;
+  font-size: 14px;
+}
+.mainSongTitle {
+}
+.mainSongSinger {
+}
+.mainSongLyric {
+  height: 66.67vh;
+  overflow-y: scroll;
+  line-height: 28px;
+  text-align: center;
+}
 #p3MainC {
   width: 45vw;
   display: flex;
