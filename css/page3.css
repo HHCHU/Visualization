@@ -17,6 +17,9 @@
 }
 #p3MainL {
   width: 4.9vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .p3LeftContent {
   width: 100%;
@@ -68,13 +71,16 @@
   justify-content: center;
 }
 #p3MainCT {
-  /* height: 45vw; */
+  height: 4.9vw;
 }
 #p3MainCC {
   height: 45vw;
 }
 #p3MainCB {
-  /* height: 45vw; */
+  /* height: 4.9vw; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #p3MainR {
   width: 4.9vw;
@@ -111,4 +117,13 @@
   width: 22.6vw;
   height: 100vh;
   background-color: rgba(64, 65, 78, 0.5);
+}
+#rangeSubjectVertical {
+  position: absolute;
+  writing-mode: bt-lr; /* Rotates the element vertically */
+  transform: rotate(270deg); /* Flips the element vertically */
+  display: none;
+}
+#rangeActive {
+  display: none;
 }

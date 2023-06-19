@@ -20,15 +20,25 @@ const personaImg = document.getElementById("personaImg");
 const personaHashtag = document.getElementById("personaHashtag");
 const personaDesc = document.getElementById("personaDesc");
 
+const rangeSubjectVertical = document.getElementById("rangeSubjectVertical");
+const rangeActive = document.getElementById("rangeActive");
+
 const resetPage3 = () => {
   //reset DOM
   clearDOMHTML(mainSongs);
   clearDOMHTML(personaImg);
   clearDOMHTML(personaHashtag);
   clearDOMHTML(personaDesc);
+  //reset Variables
+  page3Status = PAGE3_STATUS_COORDINATE;
+  inputSubject = "HIGH";
+  inputActive = "HIGH";
   //reset Sketch
   currentPS = "";
   overallShow = false;
+  //reset Slider
+  hideDOM(rangeSubjectVertical);
+  hideDOM(rangeActive);
 };
 
 const showOverall = (ps) => {

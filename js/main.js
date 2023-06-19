@@ -90,10 +90,14 @@ const onClickNextPageBtn = (e) => {
     } else if (page3Status === PAGE3_STATUS_IMP_OVERALL) {
       hideDOM(p3LeftOverall);
       hideDOM(p3RightOverall);
+      showDOM(rangeSubjectVertical);
       page3Status = PAGE3_STATUS_IMP_SUBJECT;
     } else if (page3Status === PAGE3_STATUS_IMP_SUBJECT) {
+      hideDOM(rangeSubjectVertical);
+      showDOM(rangeActive);
       page3Status = PAGE3_STATUS_IMP_ACTIVE;
     } else if (page3Status === PAGE3_STATUS_IMP_ACTIVE) {
+      hideDOM(rangeActive);
       currentPage = "pageEnd";
       closeAllPages();
       openPage(pageEnd);
@@ -155,4 +159,9 @@ for (let newChatBox of newChatBoxes) {
 homeBtn.addEventListener("click", openPage1);
 
 //Initialize
-openPage1();
+window.onload = function () {
+  openPage1();
+  let rangeWidth = canvasHeight * 0.8;
+  rangeSubjectVertical.style.width = `${rangeWidth}px`;
+  rangeActive.style.width = `${rangeWidth}px`;
+};
