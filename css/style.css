@@ -53,3 +53,10 @@ body {
 .buttonHover:hover {
   background: #10a37f;
 }
+.buttonHoverBlue {
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+.buttonHoverBlue:hover {
+  background: #4cb4ff;
+}
