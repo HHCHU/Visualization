@@ -6,6 +6,7 @@ let p3g_empty;
 let p3g_chained_up;
 
 let p3g_default;
+let p3g_overall;
 
 let p3g_ps10;
 
@@ -28,6 +29,7 @@ let area_ps10;
 
 function preload() {
   p3g_default = loadImage("assets/images/p3g_default.png");
+  p3g_overall = loadImage("assets/images/p3g_overall.png");
 
   p3g_love_dive = loadImage("assets/images/p3g_love_dive.png");
   p3g_trouble_maker = loadImage("assets/images/p3g_trouble_maker.png");
@@ -94,6 +96,13 @@ function drawCoordinate() {
 
 function drawOverall() {
   image(p3g_default, width / 2, height / 2, width, height);
+  image(
+    p3g_overall,
+    width / 2,
+    height / 2 + height * 0.05,
+    width * 0.8,
+    height
+  );
 }
 
 function drawImplicationSubject() {
