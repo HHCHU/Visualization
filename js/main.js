@@ -1,7 +1,11 @@
 const page1 = document.getElementById("page1");
 const page2 = document.getElementById("page2");
 const page3 = document.getElementById("page3");
-const pages = [page1, page2, page3, page4];
+const page4 = document.getElementById("page4");
+const page5 = document.getElementById("page5");
+const page6 = document.getElementById("page6");
+const page7 = document.getElementById("page7");
+const pages = [page1, page2, page3, page4, page5, page6, page7];
 let currentPage = "page1";
 let currentTitle = "";
 const nextPageBtn = document.getElementById("nextPageBtn");
@@ -69,9 +73,32 @@ const onClickNextPageBtn = (e) => {
     }
   } else if (currentPage === "page3") {
     closeAllPages();
-    currentPage = "page3";
+    currentPage = "page4";
     openPage(page4);
     createPage2();
+  } else if (currentPage === "page4") {
+    closeAllPages();
+    currentPage = "page5";
+    openPage(page5);
+    createPage2();
+  } else if (currentPage === "page5") {
+    closeAllPages();
+    currentPage = "page6";
+    openPage(page6);
+    createPage2();
+  } else if (currentPage === "page6") {
+    closeAllPages();
+    currentPage = "page7";
+    openPage(page7);
+    createPage2();
+  } else if (currentPage === "page7") {
+    closeAllPages();
+    currentPage = "page8";
+    openPage(page8);
+    createPage2();
+  } else if (currentPage === "page8") {
+    closeAllPages();
+    onClick=location.reload(true);
   }
   console.log("To", currentPage);
 };

@@ -1,52 +1,43 @@
-#page4 {
+#page6 {
   display: flex;
   flex-direction: row;
   opacity: 0;
 }
 
-#p4LeftTap {
+#p6LeftTap {
   width: 22.6vw;
   height: 100vh;
   background-color: rgba(64, 65, 78, 0.5);
 }
-#p4Main {
+#p6Main {
   display: flex;
   flex-direction: row;
   width: 54.8vw;
   height: 100vh;
 }
-#p4MainL {
+#p6MainL {
   width: 4.9vw;
 }
-#p4MainC {
+#p6MainC {
   width: 45vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-#p4MainCT {
+#p6MainCT {
   /* height: 45vw; */
 }
-#p4MainCC {
+#p6MainCC {
   height: 45vw;
 }
-#p4MainCB {
+#p6MainCB {
   /* height: 45vw; */
 }
-#p4MainR {
+#p6MainR {
   width: 4.9vw;
 }
-#p4RightTap {
+#p6RightTap {
   width: 22.6vw;
   height: 100vh;
   background-color: rgba(64, 65, 78, 0.5);
-  padding: auto;
-  display: flex;
-}
-#p4RightTapContent {
-  display: flex;
-  margin-right: 5vh;
-  margin-left: 5vh;
-  margin-top: auto;
-  margin-bottom: auto;
 }
