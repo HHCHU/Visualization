@@ -147,6 +147,15 @@
 #p3RightOverall {
   display: none;
 }
+#p3RightSubject {
+  display: none;
+  justify-content: center;
+}
+.p3SubjectText {
+  width: 18.125vw;
+  font-size: 15px;
+}
+
 #p3RightTap {
   width: 22.6vw;
   height: 100vh;

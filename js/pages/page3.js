@@ -22,6 +22,9 @@ const personaHashtag = document.getElementById("personaHashtag");
 const personaDesc = document.getElementById("personaDesc");
 
 const rangeSubjectVertical = document.getElementById("rangeSubjectVertical");
+const p3LeftSubject = document.getElementById("p3LeftSubject");
+const p3RightSubject = document.getElementById("p3RightSubject");
+
 const rangeActive = document.getElementById("rangeActive");
 
 const resetPage3 = () => {
