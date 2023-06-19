@@ -8,22 +8,29 @@ let p3g_chained_up;
 let p3g_default;
 let p3g_overall;
 
-let p3g_ps10;
+// let p3g_ps1;
+// let p3g_ps10;
+let p3g_psGraphs;
 
 let p3g_sub_high;
 
 let p3g_act_high;
 
-let area_ps1;
-let area_ps2;
-let area_ps3;
-let area_ps4;
-let area_ps5;
-let area_ps6;
-let area_ps7;
-let area_ps8;
-let area_ps9;
-let area_ps10;
+let aDr = 1;
+let aDx = 0;
+let aDy = 0;
+
+// let areas_ps;
+// let area_ps1;
+// let area_ps2;
+// let area_ps3;
+// let area_ps4;
+// let area_ps5;
+// let area_ps6;
+// let area_ps7;
+// let area_ps8;
+// let area_ps9;
+// let area_ps10;
 
 //Overall
 let currentPS = "";
@@ -41,22 +48,30 @@ function preload() {
   p3g_empty = loadImage("assets/images/p3g_empty.png");
   p3g_chained_up = loadImage("assets/images/p3g_chained_up.png");
 
-  p3g_ps10 = loadImage("assets/images/p3g_ps10.png");
+  // p3g_ps1 = loadImage("assets/images/p3g_ps1.png");
+  // p3g_ps10 = loadImage("assets/images/p3g_ps10.png");
+  p3g_psGraphs = {};
+  areas_ps = {};
+  for (let i = 1; i <= 10; i++) {
+    let psKey = `ps${i}`;
+    p3g_psGraphs[psKey] = loadImage(`assets/images/p3g_ps${i}.png`);
+    areas_ps[psKey] = loadImage(`assets/images/area_ps${i}.png`);
+  }
 
   p3g_sub_high = loadImage("assets/images/p3g_sub_high.png");
 
   p3g_act_high = loadImage("assets/images/p3g_act_high.png");
 
-  area_ps1 = loadImage("assets/images/area_ps1.png");
-  area_ps2 = loadImage("assets/images/area_ps2.png");
-  area_ps3 = loadImage("assets/images/area_ps3.png");
-  area_ps4 = loadImage("assets/images/area_ps4.png");
-  area_ps5 = loadImage("assets/images/area_ps5.png");
-  area_ps6 = loadImage("assets/images/area_ps6.png");
-  area_ps7 = loadImage("assets/images/area_ps7.png");
-  area_ps8 = loadImage("assets/images/area_ps8.png");
-  area_ps9 = loadImage("assets/images/area_ps9.png");
-  area_ps10 = loadImage("assets/images/area_ps10.png");
+  // area_ps1 = loadImage("assets/images/area_ps1.png");
+  // area_ps2 = loadImage("assets/images/area_ps2.png");
+  // area_ps3 = loadImage("assets/images/area_ps3.png");
+  // area_ps4 = loadImage("assets/images/area_ps4.png");
+  // area_ps5 = loadImage("assets/images/area_ps5.png");
+  // area_ps6 = loadImage("assets/images/area_ps6.png");
+  // area_ps7 = loadImage("assets/images/area_ps7.png");
+  // area_ps8 = loadImage("assets/images/area_ps8.png");
+  // area_ps9 = loadImage("assets/images/area_ps9.png");
+  // area_ps10 = loadImage("assets/images/area_ps10.png");
 }
 function setup() {
   page3Canvas = createCanvas(canvasWidth, canvasHeight);
@@ -82,9 +97,39 @@ function draw() {
 
 function mouseClicked() {
   if (page3Status === PAGE3_STATUS_IMP_OVERALL) {
-    if (currentPS) {
+    if (overallShow) {
+      if (mouseX > 0 && mouseX < width) {
+        if (mouseY > 0 && mouseY < height) {
+          overallShow = false;
+          hideOverall();
+        }
+      }
+    } else if (currentPS) {
       showOverall(currentPS);
+      overallShow = true;
     }
+  }
+}
+function keyPressed() {
+  // UP_ARROW, DOWN_ARROW, LEFT_ARROW, RIGHT_ARROW
+  console.log(aDx, aDy, aDr);
+  if (keyCode === UP_ARROW) {
+    aDy -= 0.01;
+  }
+  if (keyCode === DOWN_ARROW) {
+    aDy += 0.01;
+  }
+  if (keyCode === LEFT_ARROW) {
+    aDx -= 0.01;
+  }
+  if (keyCode === RIGHT_ARROW) {
+    aDx += 0.01;
+  }
+  if (keyCode === BACKSPACE) {
+    aDr -= 0.01;
+  }
+  if (keyCode === ENTER) {
+    aDr += 0.01;
   }
 }
 
@@ -109,6 +154,20 @@ function drawCoordinate() {
 }
 
 function drawOverall() {
+  if (overallShow) {
+    drawOverallSelected();
+  } else {
+    drawOverallSelect();
+  }
+}
+
+function drawOverallSelected() {
+  let p3g_psGraph = p3g_psGraphs[currentPS];
+  image(p3g_psGraph, width / 2, height / 2, width, height);
+  drawArea(currentPS);
+}
+
+function drawOverallSelect() {
   image(p3g_default, width / 2, height / 2, width, height);
   image(
     p3g_overall,
@@ -150,27 +209,15 @@ function drawOverall() {
 function drawImplicationSubject() {
   if (inputSubject == "HIGH") {
     image(p3g_sub_high, width / 2, height / 2, width, height);
-    image(area_ps7, width / 2, height / 2 + height * 0.05, width, height);
-    image(area_ps10, width / 2, height / 2 + height * 0.05, width, height);
+    drawArea("ps7");
+    drawArea("ps10");
   }
 }
 function drawImplicationActive() {
   if (inputActive == "HIGH") {
     image(p3g_act_high, width / 2, height / 2, width, height);
-    image(
-      area_ps3,
-      width / 2 + width * 0.05,
-      height / 2,
-      width * 0.8,
-      height * 0.8
-    );
-    image(
-      area_ps4,
-      width / 2 - width * 0.05,
-      height / 2,
-      width * 0.9,
-      height * 0.9
-    );
+    drawArea("ps3");
+    drawArea("ps4");
   }
 }
 function drawGrid() {
@@ -179,4 +226,52 @@ function drawGrid() {
     line(0, height * 0.1 * i, width, height * 0.1 * i);
     line(width * 0.1 * i, 0, width * 0.1 * i, height);
   }
+}
+
+function drawArea(psKey) {
+  if (psKey === "ps1") {
+    aDx = -0.01;
+    aDy = 0.02;
+    aDr = 0.85;
+  } else if (psKey === "ps3") {
+    image(
+      areas_ps["ps3"],
+      width / 2 + width * 0.05,
+      height / 2,
+      width * 0.8,
+      height * 0.8
+    );
+  } else if (psKey === "ps4") {
+    image(
+      areas_ps["ps4"],
+      width / 2 - width * 0.05,
+      height / 2,
+      width * 0.9,
+      height * 0.9
+    );
+  } else if (psKey === "ps7") {
+    image(
+      areas_ps["ps7"],
+      width / 2,
+      height / 2 + height * 0.05,
+      width,
+      height
+    );
+  } else if (psKey === "ps10") {
+    image(
+      areas_ps["ps10"],
+      width / 2,
+      height / 2 + height * 0.05,
+      width,
+      height
+    );
+  } else {
+  }
+  image(
+    areas_ps[psKey],
+    width / 2 + width * aDx,
+    height / 2 + height * aDy,
+    width * aDr,
+    height * aDr
+  );
 }

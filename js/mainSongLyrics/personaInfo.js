@@ -1,9 +1,9 @@
 const personaMainSongInfo = {
   ps1: {
     personaName: "순종자",
-    xR: 0.75,
-    yR: 0.175,
-    dR: 0.08,
+    xR: 0.46,
+    yR: 0.79,
+    dR: 0.14,
     color: "rgba(0, 169, 128, 0.2)",
     mainSongs: [
       {

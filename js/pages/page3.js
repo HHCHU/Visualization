@@ -54,5 +54,10 @@ const showOverall = (ps) => {
   personaDesc.innerHTML = psInfo.descHTML;
 };
 
+const hideOverall = () => {
+  hideDOM(p3LeftOverall);
+  hideDOM(p3RightOverall);
+};
+
 canvasWidth = p3MainCC.getBoundingClientRect().width;
 canvasHeight = p3MainCC.getBoundingClientRect().height;

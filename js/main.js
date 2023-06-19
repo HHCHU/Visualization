@@ -83,8 +83,6 @@ const onClickNextPageBtn = (e) => {
   } else if (currentPage === "page3") {
     console.log("From", page3Status);
     if (page3Status === PAGE3_STATUS_COORDINATE) {
-      showDOM(p3LeftOverall);
-      showDOM(p3RightOverall);
       page3Status = PAGE3_STATUS_IMP_OVERALL;
     } else if (page3Status === PAGE3_STATUS_IMP_OVERALL) {
       hideDOM(p3LeftOverall);
