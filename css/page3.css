@@ -29,7 +29,7 @@
 #p3LeftOverall {
   display: none;
 }
-.mainSongs {
+#mainSongs {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -51,11 +51,15 @@
 }
 .mainSongSinger {
 }
-.mainSongLyric {
+#mainSongLyric {
   height: 66.67vh;
   overflow-y: scroll;
   line-height: 28px;
   text-align: center;
+}
+.p-msl {
+  font-size: 13px;
+  /* margin-bottom: 13px; */
 }
 #p3MainC {
   width: 45vw;
@@ -82,19 +86,19 @@
   flex-direction: column;
   align-items: center;
 }
-.personaImg {
+#personaImg {
   width: 18.23vw;
   margin-top: 9.26vh;
   margin-bottom: 4.81vh;
 }
-.personaImg img {
+#personaImg img {
   width: 100%;
 }
-.personaHashtag {
+#personaHashtag {
   width: 18.23vw;
   margin-bottom: 4.63vh;
 }
-.personaDesc {
+#personaDesc {
   width: 18.23vw;
 }
 .p-pd {

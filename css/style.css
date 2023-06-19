@@ -60,3 +60,34 @@ body {
 .buttonHoverBlue:hover {
   background: #4cb4ff;
 }
+
+.txt-ps-1 {
+  color: #00a980;
+}
+.txt-ps-2 {
+  color: #ffd800;
+}
+.txt-ps-3 {
+  color: #ff71a3;
+}
+.txt-ps-4 {
+  color: #7978f1;
+}
+.txt-ps-5 {
+  color: #ff9337;
+}
+.txt-ps-6 {
+  color: #7ed321;
+}
+.txt-ps-7 {
+  color: #0057ff;
+}
+.txt-ps-8 {
+  color: #ff006b;
+}
+.txt-ps-9 {
+  color: #ffffff;
+}
+.txt-ps-10 {
+  color: #21f2ff;
+}

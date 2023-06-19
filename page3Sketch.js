@@ -25,6 +25,11 @@ let area_ps8;
 let area_ps9;
 let area_ps10;
 
+//Overall
+let currentPS = "";
+let hoverPs = {};
+let overallShow = false;
+
 // let p3gMode = "COORDINATE";
 
 function preload() {
@@ -72,6 +77,15 @@ function draw() {
     drawImplicationActive();
   }
   // image(p3g_default, width / 2, height / 2, width, height);
+  drawGrid();
+}
+
+function mouseClicked() {
+  if (page3Status === PAGE3_STATUS_IMP_OVERALL) {
+    if (currentPS) {
+      showOverall(currentPS);
+    }
+  }
 }
 
 function drawCoordinate() {
@@ -103,6 +117,34 @@ function drawOverall() {
     width * 0.8,
     height
   );
+  for (let ps in personaMainSongInfo) {
+    let psInfo = personaMainSongInfo[ps];
+    let cx = width * psInfo.xR;
+    let cy = height * psInfo.yR;
+    let d = width * psInfo.dR;
+    if (dist(cx, cy, mouseX, mouseY) < d) {
+      if (!hoverPs[ps]) {
+        currentPS = ps;
+      }
+      hoverPs[ps] = true;
+    } else {
+      if (currentPS == ps) {
+        currentPS = "";
+      }
+      hoverPs[ps] = false;
+    }
+  }
+  if (currentPS) {
+    let currentPSInfo = personaMainSongInfo[currentPS];
+    let cx = width * currentPSInfo.xR;
+    let cy = height * currentPSInfo.yR;
+    let cr = width * currentPSInfo.dR * 2;
+    let fillColor = currentPSInfo.color;
+    noStroke();
+    // console.log(fillColor);
+    fill(fillColor);
+    circle(cx, cy, cr);
+  }
 }
 
 function drawImplicationSubject() {
@@ -129,5 +171,12 @@ function drawImplicationActive() {
       width * 0.9,
       height * 0.9
     );
+  }
+}
+function drawGrid() {
+  stroke(255);
+  for (let i = 0; i <= 10; i++) {
+    line(0, height * 0.1 * i, width, height * 0.1 * i);
+    line(width * 0.1 * i, 0, width * 0.1 * i, height);
   }
 }

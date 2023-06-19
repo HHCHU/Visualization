@@ -12,7 +12,47 @@ let canvasHeight;
 //DOM
 const p3MainCC = document.getElementById("p3MainCC");
 const p3LeftOverall = document.getElementById("p3LeftOverall");
+const mainSongs = document.getElementById("mainSongs");
+const mainSongLyric = document.getElementById("mainSongLyric");
+
 const p3RightOverall = document.getElementById("p3RightOverall");
+const personaImg = document.getElementById("personaImg");
+const personaHashtag = document.getElementById("personaHashtag");
+const personaDesc = document.getElementById("personaDesc");
+
+const showOverall = (ps) => {
+  //LEFT
+  clearDOMHTML(mainSongs);
+  let psInfo = personaMainSongInfo[ps];
+  console.log(psInfo);
+  let mainSongsData = psInfo.mainSongs;
+  for (let msd of mainSongsData) {
+    let mainSong = document.createElement("div");
+    // console.log(mainSong);
+    mainSong.classList.add("mainSong");
+    mainSong.classList.add("buttonHoverBlue");
+    let mainSongTitle = document.createElement("div");
+    mainSongTitle.classList.add("mainSongTitle");
+    let mainSongSinger = document.createElement("div");
+    mainSongSinger.classList.add("mainSongSinger");
+    mainSongTitle.innerText = msd.title;
+    mainSongSinger.innerText = msd.singer;
+
+    mainSong.appendChild(mainSongTitle);
+    mainSong.appendChild(mainSongSinger);
+    mainSong.addEventListener("click", () => {
+      console.log("update lyrics");
+      mainSongLyric.innerHTML = msd.lyricHTML;
+    });
+    mainSongs.appendChild(mainSong);
+  }
+  //RIGHT
+  personaImg.innerHTML = psInfo.profileHTML;
+  showDOM(p3LeftOverall);
+  showDOM(p3RightOverall);
+  personaHashtag.innerText = psInfo.hashtag;
+  personaDesc.innerHTML = psInfo.descHTML;
+};
 
 canvasWidth = p3MainCC.getBoundingClientRect().width;
 canvasHeight = p3MainCC.getBoundingClientRect().height;
