@@ -8,6 +8,7 @@ let currentReply = "";
 // let crDOM;
 let crIdx = 0;
 let crSpeed = 15;
+
 let crSv = 3; // Current Reply Speed Variance
 let dialogScrollUpDetected = false;
 let dialogLastScrollPosition;
